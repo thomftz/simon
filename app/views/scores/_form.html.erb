@@ -13,7 +13,12 @@
 
   <div class="field">
     <%= f.label :score %>
-    <%= f.number_field :score %>
+    <%= f.number_field :score, in: 0..1000000 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
   </div>
 
   <div class="actions">
