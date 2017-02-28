@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1%;
+    border-top: 8px solid black;
+    border-bottom: 8px solid black;
+
+    header {
+        font-family: 'Monofett', cursive;
+        font-size: 4rem;
+    }
+
+    ul {
+      font-family: 'Sirin Stencil', cursive;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 40%;
+      font-size: 1.5rem;
+        li {
+            padding: 3%;
+        }
+    }
+}

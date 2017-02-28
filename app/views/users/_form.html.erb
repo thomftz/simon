@@ -1,3 +1,9 @@
+
+<div class="main-form-container is-flex">
+  <h1>Welcome to Simon</h1>
+  <img class="icon-md" src="https://lh4.ggpht.com/qfy_9xdh28qHatRbeKmLI3Hne-cWktrT-zWojDGiByFWMrfF5oAx8qeNuj25EzwUdB4=w300" alt="twitter logo" />
+  <h2>please create an account:</h2>
+
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -13,30 +19,31 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "name"%>
   </div>
 
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, placeholder: "email" %>
   </div>
 
-  <div class="field">
+  <div class="field" type="password">
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.text_field :password, placeholder: "password" %>
   </div>
 
   <div class="field">
     <%= f.label :image %>
-    <%= f.text_field :image %>
+    <%= f.text_field :image, placeholder: "image url" %>
   </div>
 
   <div class="field">
     <%= f.label :about %>
-    <%= f.text_field :about %>
+    <%= f.text_field :about, placeholder: "quick blurb" %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
