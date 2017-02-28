@@ -10,5 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
+//= require angular/angular
+//= require angular-ui-router/angular-ui-router
+//= require angular-local-storage/angular-local-storage
 //= require_tree .

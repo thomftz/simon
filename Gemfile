@@ -1,11 +1,23 @@
 source 'https://rubygems.org'
+ruby '2.4.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'bower-rails'
+gem 'angular-rails-templates'
+gem 'foreman'
+
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
 # AWS File uploads
+gem 'aws-sdk'
 gem 'paperclip'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -26,7 +38,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 # gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
