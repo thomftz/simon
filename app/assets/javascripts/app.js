@@ -5,7 +5,7 @@
     $stateProvider.state('ParentState', {
       url: '/',
       abstract: true,
-      template: '<ui-view></ui-view'
+      template: '<ui-view></ui-view>'
     }).state('ParentState.index', {
       url: '',
       controller: 'IndexController',
