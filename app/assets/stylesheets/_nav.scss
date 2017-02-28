@@ -9,19 +9,25 @@
     border-bottom: 8px solid black;
 
     header {
-        font-family: 'Monofett', cursive;
+        font-family: $headerFont;
         font-size: 4rem;
     }
 
     ul {
-      font-family: 'Sirin Stencil', cursive;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      width: 40%;
-      font-size: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 40%;
+        font-size: 1.5rem;
+
         li {
             padding: 3%;
+        }
+
+        :hover {
+            background: black;
+            color: white;
+            border-radius: 1rem;
         }
     }
 }
