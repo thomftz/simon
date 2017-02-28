@@ -10,9 +10,14 @@
             url: '',
             controller: 'IndexController',
             templateUrl: 'index.html'
-        }).state('ParentState.gameactive', {
+        }).state('ParentState.profile', {
+            url: 'profile',
+            // controller: 'ProfileController as profileCtrl',
+            templateUrl: 'profile.html'
+        }).state('ParentState.game', {
             url: 'game',
-            templateUrl: 'gameactive.html'
+            // controller: 'GameController as gameCtrl',
+            templateUrl: 'game.html'
         });
     });
 })(angular);
