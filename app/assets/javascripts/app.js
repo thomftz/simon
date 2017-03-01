@@ -9,7 +9,7 @@
     }).state('ParentState.index', {
       url: '',
       controller: 'IndexController',
-      templateUrl: 'index.html'
+      templateUrl: 'login.html'
     }).state('ParentState.profile', {
       url: 'profile',
       // controller: 'ProfileController as profileCtrl',
