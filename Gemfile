@@ -10,6 +10,7 @@ end
 gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'foreman'
+gem 'omniauth-google-oauth2'
 
 group :production, :staging do
   gem "rails_12factor"
