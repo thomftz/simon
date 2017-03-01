@@ -1,0 +1,42 @@
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid black;
+    border-radius: 1rem;
+    width: 70%;
+    margin: 3% auto;
+
+    .label {
+        font-family: $headerFont;
+        font-size: 1.5rem;
+    }
+
+    .usercontainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin: 2%;
+
+        .user-name {
+            font-family: $headerFont;
+            font-size: 4.5rem;
+            padding: 1%;
+        }
+
+        .rank {
+            font-size: 2rem;
+            padding-left: 3%;
+            padding-right: 3%;
+            line-height: 1rem;
+            border-radius: 1rem;
+            width: 30%;
+        }
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 3% 3%;
+    }
+}
