@@ -26,6 +26,10 @@
           border-radius: 1rem;
           // border: 1px solid black;
           padding: 3%;
+          &:hover {
+            color: white;
+            cursor: pointer;
+          }
         }
 
     }
@@ -33,18 +37,15 @@
 .game {
   &:hover {
     background: #ed615c;
-    color: white;
   }
 }
 .home {
   &:hover {
     background: #5dc8ef;
-    color: white;
   }
 }
 .leaderboard {
   &:hover {
     background: #edc65c;
-    color: white;
   }
 }
