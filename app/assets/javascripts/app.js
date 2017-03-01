@@ -18,6 +18,11 @@
       url: 'game',
       // controller: 'GameController as gameCtrl',
       templateUrl: 'game.html'
+    }).state('ParentState.leaderboard', {
+      url: 'leaderboard',
+      // controller: 'GameController as gameCtrl',
+      templateUrl: 'leaderboard.html'
     });
   });
+
 })(angular);
