@@ -5,11 +5,14 @@ class ScoresController < ApplicationController
   # GET /scores.json
   def index
     @scores = Score.all
+
+    render json: @scores
   end
 
   # GET /scores/1
   # GET /scores/1.json
   def show
+
   end
 
   # GET /scores/new
@@ -69,6 +72,6 @@ class ScoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def score_params
-      params.require(:score).permit(:score, :user_id)
+      params.require(:score).permit(:points, :rank, :user_id)
     end
 end
