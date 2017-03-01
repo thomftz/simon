@@ -11,6 +11,9 @@
     header {
         font-family: $headerFont;
         font-size: 4rem;
+        &:hover {
+          cursor: pointer;
+        }
     }
 
     ul {
@@ -34,6 +37,23 @@
 
     }
 }
+
+.g-active {
+  background: #ed615c;
+  color: white;
+
+}
+.h-active {
+  background: #5dc8ef;
+  color: white;
+
+}
+.l-active {
+  background: #edc65c;
+  color: white;
+
+}
+
 .game {
   &:hover {
     background: #ed615c;
