@@ -1,4 +1,5 @@
 (function(ng, currentUser) {
+
     ng.module('Simon').controller('ProfileController', function() {
 
         if (currentUser) {
