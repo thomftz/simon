@@ -14,7 +14,7 @@
             templateUrl: 'login.html'
         }).state('ParentState.profile', {
             url: 'profile',
-            // controller: 'ProfileController as profileCtrl',
+            controller: 'ProfileController as profileCtrl',
             templateUrl: 'profile.html'
         }).state('ParentState.game', {
             url: 'game',
