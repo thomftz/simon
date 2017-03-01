@@ -1,10 +1,11 @@
-(function(ng) {
-  ng.module('Simon').controller('ProfileController', function() {
-    console.log('in');
-
-    var user = currentUser;
-
-
-  });
-
-})(angular);
+// (function(ng, currentUser) {
+//
+//     ng.module('Simon').controller('ProfileController', function() {
+//
+//         if (currentUser) {
+//             console.log('in');
+//         }
+//     });
+//
+//
+// })(angular, window.currentUser);
