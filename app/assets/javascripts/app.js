@@ -1,5 +1,6 @@
 (function(ng) {
-    ng.module('TestDemo', ['ui.router', 'templates']).config(function($stateProvider, $urlRouterProvider) {
+
+    ng.module('Simon', ['ui.router', 'templates']).config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider.state('ParentState', {
@@ -8,8 +9,8 @@
             template: '<ui-view></ui-view>'
         }).state('ParentState.index', {
             url: '',
-            controller: 'IndexController',
-            templateUrl: 'index.html'
+            controller: 'LogInController',
+            templateUrl: 'login.html'
         }).state('ParentState.profile', {
             url: 'profile',
             // controller: 'ProfileController as profileCtrl',
@@ -18,6 +19,12 @@
             url: 'game',
             // controller: 'GameController as gameCtrl',
             templateUrl: 'game.html'
+        }).state('ParentState.leaderboard', {
+            url: 'leaderboard',
+            // controller: 'GameController as gameCtrl',
+            templateUrl: 'leaderboard.html'
         });
     });
+
+
 })(angular);
