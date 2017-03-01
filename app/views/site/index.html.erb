@@ -7,12 +7,23 @@
         <li class="leaderboard" ui-sref-active="l-active" ui-sref="ParentState.leaderboard">Leaderboard</li>
     </ul>
 </div>
-<div>
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
+<div class="login-out" ng-controller="LogInController as loginCtrl">
+
+
+  <% unless current_user %>
+<div class="main-form-container is-flex">
+  <h1>Welcome to Simon</h1>
+  <img class="icon-md" src="/images/logo.png" alt="simon logo" />
     <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
   <% end %>
 </div>
+
+<div class="profile-user-left" >
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% end %>
+</div>
+</div>
+
 <ui-view></ui-view>

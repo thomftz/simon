@@ -1,6 +1,4 @@
 (function(ng) {
-
-
     ng.module('Simon', ['ui.router', 'templates']).config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 
@@ -25,8 +23,5 @@
             // controller: 'GameController as gameCtrl',
             templateUrl: 'leaderboard.html'
         });
-
     });
-
-
 })(angular);
