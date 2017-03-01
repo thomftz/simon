@@ -1,5 +1,5 @@
 (function(ng) {
-  ng.module('TestDemo', ['ui.router', 'templates']).config(function($stateProvider, $urlRouterProvider) {
+  ng.module('Simon', ['ui.router', 'templates']).config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('ParentState', {
@@ -8,7 +8,7 @@
       template: '<ui-view></ui-view>'
     }).state('ParentState.index', {
       url: '',
-      controller: 'IndexController',
+      controller: 'LogInController',
       templateUrl: 'login.html'
     }).state('ParentState.profile', {
       url: 'profile',
