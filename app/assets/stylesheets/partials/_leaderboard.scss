@@ -1,0 +1,28 @@
+table {
+    margin: 3% auto;
+    width: 70%;
+
+    th {
+        padding: 3%;
+        background: black;
+        color: white;
+        font-size: 1.5rem;
+        border: 2px solid white;
+        border-bottom: none;
+    }
+
+    tr {
+        margin: 1% auto;
+
+        td {
+            margin: 1% auto;
+            padding: 1%;
+            border-right: 2px solid black;
+            border-top: 2px solid black;
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+    }
+}
