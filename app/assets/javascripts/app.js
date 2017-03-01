@@ -24,5 +24,4 @@
       templateUrl: 'leaderboard.html'
     });
   });
-
 })(angular);

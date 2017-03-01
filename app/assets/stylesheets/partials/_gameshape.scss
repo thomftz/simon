@@ -1,81 +1,88 @@
 .gameshapecontainer {
     position: absolute;
+    left: 35%;
+    bottom: -25%;
+    top: 30%;
 
-    .gameshape {
+   .gameshape {
         display: flex;
         flex-flow: row wrap;
         width: 450px;
-        margin: 10% auto;
 
-        .topleft {
+       .topleft {
             padding: 1%;
             margin: 1%;
-            background: #ed615c;
+            background: #ed615c ;
             height: 200px;
             width: 200px;
             border-top-left-radius: 12rem;
         }
 
-        .topleft:active {
-            background: #ff8d89;
+       .topleft:active {
+            background: #ff8d89 ;
         }
 
-        .topright {
+       .topright {
             margin: 1%;
             padding: 1%;
-            background: #5cf25c;
+            background: #5cf25c ;
             height: 200px;
             width: 200px;
             border-top-right-radius: 12rem;
         }
 
-        .topright:active {
-            background: #a7ff89;
+       .topright:active {
+            background: #a7ff89 ;
         }
 
-        .bottomleft {
+       .bottomleft {
             padding: 1%;
             margin: 1%;
-            background: #5dc8ef;
+            background: #5dc8ef ;
             height: 200px;
             width: 200px;
             border-bottom-left-radius: 12rem;
         }
 
-        .bottomleft:active {
-            background: #89dfff;
+       .bottomleft:active {
+            background: #89dfff ;
         }
 
-        .bottomright {
+       .bottomright {
             margin: 1%;
             padding: 1%;
-            background: #edc65c;
+            background: #edc65c ;
             height: 200px;
             width: 200px;
             border-bottom-right-radius: 12rem;
         }
 
-        .bottomright:active {
-            background: #ffe093;
+       .bottomright:active {
+            background: #ffe093 ;
         }
+    }
+}
 
-        .centershape {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            width: 200px;
-            margin: auto;
-            border-radius: 10rem;
-            background: black;
-            position: relative;
-            border: 10px solid white;
-            font-size: 4rem;
+.centershape {
+    position: relative;
+    z-index: 3;
+    top: -310px;
+    left: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    border-radius: 10rem;
+    background: black;
+    position: relative;
+    border: 10px solid white;
+    font-size: 4rem;
 
-            span {
-                color: white;
-                margin-bottom: 2%;
-            }
-        }
+   span {
+        color: white;
+        margin-bottom: 2%;
+        font-family: $primaryFont;
     }
 }

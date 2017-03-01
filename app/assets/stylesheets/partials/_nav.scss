@@ -14,20 +14,37 @@
     }
 
     ul {
+        font-family: $primaryFont;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         width: 40%;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
 
         li {
-            padding: 3%;
+          align-content: center;
+          border-radius: 1rem;
+          // border: 1px solid black;
+          padding: 3%;
         }
 
-        :hover {
-            background: black;
-            color: white;
-            border-radius: 1rem;
-        }
     }
+}
+.game {
+  &:hover {
+    background: #ed615c;
+    color: white;
+  }
+}
+.home {
+  &:hover {
+    background: #5dc8ef;
+    color: white;
+  }
+}
+.leaderboard {
+  &:hover {
+    background: #edc65c;
+    color: white;
+  }
 }
