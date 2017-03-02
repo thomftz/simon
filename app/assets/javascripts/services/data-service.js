@@ -1,23 +1,23 @@
 (function(ng) {
   ng.module('Simon').service('DataService', function($http) {
-    function getUsers() {
+    function getUsers(url) {
       return $http({
         method: 'GET',
-        url: "localhost:3000/users.json"
+        url: url
       });
     }
 
     function setUsers() {
       return $http({
         method: 'PUT',
-        url: "localhost:3000/users.json"
+        url: url
       });
     }
 
     function deleteStuff() {
       return $http({
         method: 'DELETE',
-        url: "localhost:3000/users.json"
+        url: url
       });
     }
 
