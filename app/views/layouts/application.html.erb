@@ -12,7 +12,6 @@
     <script>
     var currentUser = <%= raw current_user.to_json %>
     var loggedInUser = <%= raw User.find_by_id(session[:user_id]).to_json %>
-    var loggedInUserScores = <%= raw Score.find(session[:user_id]).to_json %>
     </script>
 
     <%= yield %>
