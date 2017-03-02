@@ -1,3 +1,4 @@
 asset 'angular'
+asset 'lodash'
 asset 'angular-ui-router'
 asset 'angular-local-storage'
