@@ -22,9 +22,9 @@
     }
 
     return {
-      getUsers: get,
-      setUsers: set,
-      deleteStuff: deleteThis
+      get: getUsers,
+      set: setUsers,
+      delete: deleteStuff
     };
   });
 })(angular);

@@ -7,13 +7,15 @@
     <th>Rank</th>
 
   </tr>
-  <!-- <tbody>
-    <tr class='item-list' ng-repeat="leadCtrl.topUsers | orderBy: leadCtrl.sortType">
-      <td>topUsers.name</td>
-      <td>topUsers.score</td>
-      <td>topUsers.updated_at</td>
-      <td>topUsers.rank</td>
+  <tbody ng-controller="LeaderboardController as leadCtrl">
+    <tr class='item-list' ng-repeat="users in leadCtrl.users">
+
+      <!-- | orderBy: leadCtrl.sortType"> -->
+      <td>{{users.name}}</td>
+      <td>{{users.scores[0].points}}</td>
+      <td>{{users.updated_at}}</td>
+      <td>{{users.scores[0].rank}}</td>
     </tr>
-  </tbody> -->
+  </tbody>
 
 </table>
