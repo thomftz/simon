@@ -6,7 +6,7 @@
       url: '/',
       abstract: true,
       template: '<ui-view></ui-view>'
-    }).state('ParentState.index', {
+    }).state('ParentState.profile', {
       url: '',
       controller: 'ProfileController as profileCtrl',
       templateUrl: 'profile.html'
