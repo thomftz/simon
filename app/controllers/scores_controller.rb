@@ -6,7 +6,9 @@ class ScoresController < ApplicationController
   def index
     @scores = Score.all
 
-    # render json: @scores.map { |scores| scores.points, scores.rank}
+    @leaderboard = RubySerializer.as_json @scores, include: :user
+
+    render json: @leaderboard
   end
 
   # GET /scores/1

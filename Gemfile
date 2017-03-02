@@ -11,6 +11,7 @@ gem 'angular-rails-templates'
 gem 'rails_12factor'
 gem 'foreman'
 gem 'omniauth-google-oauth2'
+gem 'ruby-serializer'
 
 group :production, :staging do
   gem "rails_12factor"
