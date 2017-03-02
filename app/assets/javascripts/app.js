@@ -19,5 +19,5 @@
       // controller: 'GameController as gameCtrl',
       templateUrl: 'leaderboard.html'
     });
-  });
-}])(angular);
+  }]);
+})(angular);
