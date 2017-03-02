@@ -1,18 +1,21 @@
-<table>
-    <tr>
+<table ng-show="signedIn">
+  <tr>
 
-        <th>User</th>
-        <th>Score</th>
-        <th>On</th>
-        <th>Rank</th>
+    <th>User</th>
+    <th>Score</th>
+    <th>On</th>
+    <th>Rank</th>
 
+  </tr>
+  <tbody ng-controller="LeaderboardController as leadCtrl">
+    <tr class='item-list' ng-repeat="users in leadCtrl.users | orderBy: users.scores[0].points">
+
+      <!-- | orderBy: leadCtrl.sortType"> -->
+      <td>{{users.name}}</td>
+      <td>{{users.scores[0].points}}</td>
+      <td>{{users.updated_at | date: "M.dd.yyyy"}} - {{users.updated_at | date: "h.mm.a"}}</td>
+      <td>{{users.scores[0].rank}}</td>
     </tr>
-
-    <tr class='item-list'>
-        <td>ProfessorPlebian</td>
-        <td>1,000,000</td>
-        <td>Last Friday</td>
-        <td>lizard king</td>
-    </tr>
+  </tbody>
 
 </table>

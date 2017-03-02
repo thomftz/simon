@@ -6,12 +6,8 @@
       url: '/',
       abstract: true,
       template: '<ui-view></ui-view>'
-    }).state('ParentState.index', {
-      url: '',
-      controller: 'LogInController',
-      templateUrl: 'login.html'
     }).state('ParentState.profile', {
-      url: 'profile',
+      url: '',
       controller: 'ProfileController as profileCtrl',
       templateUrl: 'profile.html'
     }).state('ParentState.game', {

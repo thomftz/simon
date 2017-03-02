@@ -1,16 +1,14 @@
 (function(ng, currentUser) {
 
-    ng.module('Simon').controller('ProfileController', ['$scope', '$interpolate', function($scope, $interpolate) {
+  ng.module('Simon').controller('ProfileController', function($scope, $q, DataService) {
 
-        if (currentUser) {
+    $scope.userName = currentUser;
+    $scope.signedIn = false;
+    if (currentUser) {
+      $scope.signedIn = true;
 
-            $scope.userName = currentUser;
-
-
-
-
-        }
-    }]);
+    }
+  });
 
 
 })(angular, window.currentUser);
