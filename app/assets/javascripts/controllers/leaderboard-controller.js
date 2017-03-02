@@ -8,7 +8,7 @@
     this.getTotalScore = function() {
       for (var i = 0; i < this.users.length; i++) {
         let score = this.users[i].scores;
-        for (var i = 0; i < score.length; i++) {
+        for (var j = 0; j < score.length; j++) {
           console.log(score[i].points);
         }
 
