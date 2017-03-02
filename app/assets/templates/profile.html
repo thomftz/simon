@@ -16,13 +16,12 @@
           <span class="label">total points </span>
           <span class="score">2,010pts</span>
         </div>
-        <div class="textarea-container">
+        <form class="textarea-container" ng-submit="getBioText(text)">
           <label> please enter you blurb
-          <textarea></textarea>
+          <textarea ng-model="text"></textarea>
         </label>
-
-
-        </div>
+          <button type="submit">submit</button>
+        </form>
 
       </div>
     </div>

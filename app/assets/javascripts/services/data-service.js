@@ -1,4 +1,4 @@
-(function(ng) {
+(function(ng, currentUser) {
   ng.module('Simon').service('DataService', ['$http', function($http) {
     function getUsers(url) {
       return $http({
@@ -14,6 +14,18 @@
       });
     }
 
+    function patchBio(text) {
+      return $http({
+        method: 'PATCH',
+        url: `/users/${currentUser.id}.json`,
+        data: {
+          user: {
+            about: text
+          }
+        }
+      });
+    }
+
     function deleteStuff() {
       return $http({
         method: 'DELETE',
@@ -24,10 +36,11 @@
     return {
       get: getUsers,
       set: setUsers,
-      delete: deleteStuff
+      delete: deleteStuff,
+      patch: patchBio
     };
   }]);
-})(angular);
+})(angular, window.currentUser);
 
 //
 //
