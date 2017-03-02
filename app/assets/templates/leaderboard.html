@@ -1,18 +1,19 @@
 <table>
-    <tr>
+  <tr>
 
-        <th>User</th>
-        <th>Score</th>
-        <th>On</th>
-        <th>Rank</th>
+    <th>User</th>
+    <th>Score</th>
+    <th>On</th>
+    <th>Rank</th>
 
+  </tr>
+  <tbody>
+    <tr class='item-list' ng-repeat="leadCtrl.topUsers | orderBy: leadCtrl.sortType">
+      <td>topUsers.name</td>
+      <td>topUsers.score</td>
+      <td>topUsers.updated_at</td>
+      <td>topUsers.rank</td>
     </tr>
-
-    <tr class='item-list'>
-        <td>ProfessorPlebian</td>
-        <td>1,000,000</td>
-        <td>Last Friday</td>
-        <td>lizard king</td>
-    </tr>
+  </tbody>
 
 </table>
