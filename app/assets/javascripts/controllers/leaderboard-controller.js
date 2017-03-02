@@ -1,5 +1,5 @@
 (function(ng) {
-  ng.module('Simon').controller('LeaderboardController', function($q, $state, $scope, DataService) {
+  ng.module('Simon').controller('LeaderboardController', ['$q', '$state', '$scope', 'DataService', function($q, $state, $scope, DataService) {
     this.users = [];
     // this.points = this.users.scores;
 
@@ -28,5 +28,5 @@
     }).catch((error) => {
       console.log(error);
     });
-  });
+  }]);
 })(angular);

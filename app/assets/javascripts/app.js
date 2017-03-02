@@ -1,5 +1,5 @@
 (function(ng) {
-  ng.module('Simon', ['ui.router', 'templates']).config(function($stateProvider, $urlRouterProvider) {
+  ng.module('Simon', ['ui.router', 'templates']).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('ParentState', {
@@ -19,5 +19,5 @@
       // controller: 'GameController as gameCtrl',
       templateUrl: 'leaderboard.html'
     });
-  });
+  }]);
 })(angular);

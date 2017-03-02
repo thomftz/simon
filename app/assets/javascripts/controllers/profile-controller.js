@@ -1,6 +1,6 @@
 (function(ng, currentUser) {
-  ng.module('Simon').controller('ProfileController', function($scope, $q, DataService) {
-    console.log(currentUser.image);
+
+  ng.module('Simon').controller('ProfileController', ['$scope', '$q', 'DataService', function($scope, $q, DataService) {
 
     $scope.userName = currentUser;
     $scope.signedIn = false;
@@ -8,7 +8,7 @@
       $scope.signedIn = true;
 
     }
-  });
+  }]);
 
 
 })(angular, window.currentUser);

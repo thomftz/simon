@@ -1,5 +1,5 @@
 (function(ng) {
-  ng.module('Simon').service('DataService', function($http) {
+  ng.module('Simon').service('DataService', ['$http', function($http) {
     function getUsers(url) {
       return $http({
         method: 'GET',
@@ -26,7 +26,7 @@
       set: setUsers,
       delete: deleteStuff
     };
-  });
+  }]);
 })(angular);
 
 //
