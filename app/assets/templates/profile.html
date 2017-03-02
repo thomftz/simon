@@ -1,18 +1,29 @@
-<div class="user-profile" ng-show="signedIn">
+<div class="is-flex user-profile" ng-show="signedIn">
   <div class="usercontainer">
-    <span class="user-name">{{userName.name}}</span>
-    <span class="label">rank<span>
-           <span class="rank">liquidsnake</span>
+    <div class="is-flex userinfocontainer">
+      <img class="user-image" src="{{userName.image}}" />
+      <span class="user-name">{{userName.name}}</span>
+    </div>
   </div>
   <div class="infocontainer">
 
-    <div class="about-container">
-      <div clas="score-container">
-        <span class="label">total points </span>
-        <span class="score">2,010pts</span>
+    <div class="is-flex about-container">
+      <div class="rank-container">
+        <span class="label">rank<span>
+        </div>
+          <span class="rank">liquidsnake</span>
+        <div class="score-container">
+          <span class="label">total points </span>
+          <span class="score">2,010pts</span>
+        </div>
+        <div class="textarea-container">
+          <label> please enter you blurb
+          <textarea></textarea>
+        </label>
+
+
+        </div>
+
       </div>
-
-
     </div>
   </div>
-</div>
