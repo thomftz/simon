@@ -6,7 +6,7 @@ class ScoresController < ApplicationController
   def index
     @scores = Score.all
 
-    render json: @scores.map { |scores| scores.points, scores.rank}
+    # render json: @scores.map { |scores| scores.points, scores.rank}
   end
 
   # GET /scores/1
