@@ -1,6 +1,7 @@
 (function(ng) {
   ng.module('Simon').controller('LeaderboardController', function($q, $state, $scope, DataService) {
     this.users = [];
+    console.log(this.users.updated_at);
     // this.points = this.users.scores;
     let btn = document.querySelector('.testbtn');
     btn.addEventListener('click', function() {});
