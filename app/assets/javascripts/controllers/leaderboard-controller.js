@@ -28,5 +28,5 @@
     }).catch((error) => {
       console.log(error);
     });
-  });
-}])(angular);
+  }]);
+})(angular);

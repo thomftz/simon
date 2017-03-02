@@ -26,8 +26,8 @@
       set: setUsers,
       delete: deleteStuff
     };
-  });
-}])(angular);
+  }]);
+})(angular);
 
 //
 //

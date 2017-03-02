@@ -1,5 +1,5 @@
 (function(ng) {
-  ng.module('Simon', ['ui.router', 'templates']).config(['stateProvider', 'urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  ng.module('Simon', ['ui.router', 'templates']).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('ParentState', {
