@@ -10,7 +10,7 @@
     }
     $scope.getBioText = function(text) {
       $scope.bio = text;
-      $q.when(DataService.patch("bio", text)).then((response) => {
+      $q.when(DataService.patch(text)).then((response) => {
         console.log(response.data);
       }).catch((error) => {
         console.log(error);
