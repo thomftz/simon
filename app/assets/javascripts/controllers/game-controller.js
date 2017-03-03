@@ -17,9 +17,7 @@
             countDown.className = 'count-down';
             countDown.innerHTML = `${timer}`;
             turnDisplay.appendChild(countDown);
-
-
-
+            $scope.gamePattern();
         };
 
         start.onclick = function() {
@@ -31,6 +29,8 @@
                 countDown.innerHTML = `${timer}`;
             }, 1000);
         };
-
+        $scope.gamePattern = function() {
+            console.log('in gamepatterrrrrn');
+        };
     }]);
 })(angular);
