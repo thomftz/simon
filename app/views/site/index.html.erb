@@ -1,5 +1,7 @@
+<button class="testbtn">test</button>
+
 <header class="fat-header" ng-hide="signedIn">simon</header>
-<div class="navbar" ng-show="signedIn">
+<div class="navbar">
     <header ui-sref="ParentState.profile" >simon</header>
     <ul ng-show="signedIn">
         <li class="home" ui-sref-active="h-active" ui-sref="ParentState.profile">Home</li>
@@ -7,7 +9,7 @@
         <li class="leaderboard" ui-sref-active="l-active" ui-sref="ParentState.leaderboard">Leaderboard</li>
     </ul>
 </div>
-<div class="login-out" ng-controller="LogInController as loginCtrl">
+<div class="login-out">
   <% unless current_user %>
 <div class="main-form-container is-flex">
   <h1>Welcome to Simon</h1>
