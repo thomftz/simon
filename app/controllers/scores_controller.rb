@@ -5,6 +5,10 @@ class ScoresController < ApplicationController
   # GET /scores.json
   def index
     @scores = Score.all
+
+    @leaderboard = RubySerializer.as_json @scores, include: :user
+
+    render json: @leaderboard
   end
 
   # GET /scores/1
@@ -69,6 +73,6 @@ class ScoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def score_params
-      params.require(:score).permit(:score, :user_id)
+      params.require(:score).permit(:points, :rank, :user_id)
     end
 end

@@ -3,13 +3,18 @@
   <head>
     <title>Simon</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
-  <body>
+  <body ng-controller="ProfileController">
+    <button class="testbtn">test</button>
+    <script>
+    var currentUser = <%= raw current_user.to_json %>
+    var loggedInUser = <%= raw User.find_by_id(session[:user_id]).to_json %>
+    </script>
+
     <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

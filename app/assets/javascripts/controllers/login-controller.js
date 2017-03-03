@@ -1,5 +1,5 @@
 (function(ng) {
-  ng.module('Simon').controller('LogInController', function($scope) {
-    $scope.name = 'heraldo';
-  });
+  ng.module('Simon').controller('LogInController', ['$scope', '$q', function($scope, $q) {
+
+  }]);
 })(angular);
