@@ -26,10 +26,25 @@
       });
     }
 
-    function deleteStuff() {
+    // function deleteBio() {
+    //   return $http({
+    //     method: 'DELETE',
+    //     url: `/users/${currentUser.id}.json`,
+    //     // data: {
+    //     //   user: {
+    //     //     about: ''
+    //     //   }
+    //     // }
+    //   });
+    // }
+
+    function deleteStuff(url, about) {
       return $http({
         method: 'DELETE',
-        url: url
+        url: `/users/${currentUser.id}.json`,
+        // data: {
+        //   user
+        // }
       });
     }
 

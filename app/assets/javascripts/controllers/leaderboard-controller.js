@@ -1,32 +1,6 @@
 (function(ng) {
-  ng.module('Simon').controller('LeaderboardController', ['$q', '$state', '$scope', 'DataService', function($q, $state, $scope, DataService) {
-    this.users = [];
-    // this.points = this.users.scores;
-
-
-
-    this.getTotalScore = function() {
-      for (var i = 0; i < this.users.length; i++) {
-        let score = this.users[i].scores;
-        for (var i = 0; i < score.length; i++) {
-          console.log(score[i].points);
-        }
-
-        // let lastLogin = date
-      }
-      // console.log(this.users);
-      return this.users;
-    };
-
-    let btn = document.querySelector('.testbtn');
-    btn.addEventListener('click', function() {});
-
-    $q.when(DataService.get("/users.json")).then((response) => {
-      this.users = response.data;
-      this.getTotalScore();
-      // console.log(response);
-    }).catch((error) => {
-      console.log(error);
-    });
+  ng.module('Simon').controller('LeaderboardController', ['$q', '$state', '$scope', 'DataService', 'UserService', function($q, $state, $scope, DataService, UserService) {
+    $scope.users = UserService.getUsers();
+    console.log($scope.users);
   }]);
 })(angular);
