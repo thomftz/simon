@@ -9,7 +9,7 @@
         flex-flow: row wrap;
         width: 450px;
 
-        .topleft {
+        #topleft {
             padding: 1%;
             margin: 1%;
             background: #ed615c;
@@ -18,11 +18,11 @@
             border-top-left-radius: 12rem;
         }
 
-        .topleft:active {
+        #topleft:active {
             background: #ff8d89;
         }
 
-        .topright {
+        #topright {
             margin: 1%;
             padding: 1%;
             background: #5cf25c;
@@ -31,11 +31,11 @@
             border-top-right-radius: 12rem;
         }
 
-        .topright:active {
+        #topright:active {
             background: #a7ff89;
         }
 
-        .bottomleft {
+        #bottomleft {
             padding: 1%;
             margin: 1%;
             background: #5dc8ef;
@@ -44,11 +44,11 @@
             border-bottom-left-radius: 12rem;
         }
 
-        .bottomleft:active {
+        #bottomleft:active {
             background: #89dfff;
         }
 
-        .bottomright {
+        #bottomright {
             margin: 1%;
             padding: 1%;
             background: #edc65c;
@@ -57,7 +57,7 @@
             border-bottom-right-radius: 12rem;
         }
 
-        .bottomright:active {
+        #bottomright:active {
             background: #ffe093;
         }
     }

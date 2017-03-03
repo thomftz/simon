@@ -1,17 +1,21 @@
 (function(ng) {
     ng.module('Simon').controller('GameController', ['$scope', '$q', function($scope, $q) {
-        const startTime = new Date().getTime();
+
+        let green = $('#topright').data('id');
+        let red = $('#topleft').data('id');
+        let blue = $('#bottomleft').data('id');
+        let yellow = $('#bottomright').data('id');
         let timer = 20;
         let timerEnd = 0;
         let turnDisplay = document.querySelector('.centershape');
         let countDown = document.createElement('span');
-
-
-
         let start = document.querySelector('.start-game');
+        let patternArray = [];
+        let runPattern = [];
         start.addEventListener('click', function() {
             $scope.startGame();
         });
+
 
         $scope.startGame = function() {
             countDown.className = 'count-down';
@@ -21,16 +25,45 @@
         };
 
         start.onclick = function() {
-            setInterval(function() {
+            let timerInt = setInterval(function() {
                 timer--;
-                document.querySelector('.count-down').value = timer;
-                if (timer < 0)
-                    clearInterval(startTimer);
                 countDown.innerHTML = `${timer}`;
+                if (timer === 0) {
+                    clearInterval(timerInt);
+                }
             }, 1000);
         };
         $scope.gamePattern = function() {
-            console.log('in gamepatterrrrrn');
+            while (patternArray.length <= 3) {
+                let pattern = Math.floor(Math.random() * 4);
+
+                patternArray.push(pattern);
+            }
+
+            $scope.gamePlay();
+
+        };
+        $scope.gamePlay = function() {
+            let light = patternArray[0];
+            let patternSlice = patternArray.slice(0, 1);
+            // do {
+            //     if (light === red) {
+            //         patternArray.slice(0, 1);
+            //         runPattern.push(patternSlice);
+            //     } else if (light === blue) {
+            //         patternArray.slice(0, 1);
+            //         runPattern.push(patternSlice);
+            //     } else if (light === yellow) {
+            //         patternArray.slice(0, 1);
+            //         runPattern.push(patternSlice);
+            //     } else if (light === green) {
+            //         patternArray.slice(0, 1);
+            //         runPattern.push(patternSlice);
+            //     }
+            // } while (patternArray.length > runPattern.length);
+            console.log('pattern array', patternArray);
+            // console.log('pattern sliced', patternArray.slice(0, 1));
+            // console.log('runpattern array', runPattern);
         };
     }]);
 })(angular);
