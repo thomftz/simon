@@ -1,34 +1,34 @@
 <div class="is-flex user-profile" ng-show="signedIn">
-  <div class="usercontainer">
-    <div class="is-flex userinfocontainer">
-      <img class="user-image" src="{{userName.image}}" />
-      <span class="user-name">{{userName.name}}</span>
+    <div class="usercontainer">
+        <div class="is-flex userinfocontainer">
+            <img class="user-image" src="{{userName.image}}" />
+            <span class="user-name">{{userName.name}}</span>
+        </div>
     </div>
-  </div>
-  <div class="infocontainer">
+    <div class="infocontainer">
 
-    <div class="is-flex about-container">
-      <div class="rank-container">
-        <span class="label">rank<span>
+        <div class="is-flex about-container">
+            <div class="rank-container">
+                <span class="label">rank<span>
         </div>
           <span class="rank">liquidsnake</span>
-        <div class="score-container">
-          <span class="label">total points </span>
-          <span class="score">2,010pts</span>
-        </div>
-        <form ng-hide="bio" class="textarea-container" ng-submit="patchBioText(text)">
+                <div class="score-container">
+                    <span class="label">total points </span>
+                    <span class="score">2,010pts</span>
+                </div>
+                <form ng-hide="bio" class="textarea-container" ng-submit="patchBioText(text)">
 
-          <label> please enter you blurb
+                    <label> please enter your blurb
           <textarea ng-model="text"></textarea>
         </label>
-          <button class="submit-bio" type="submit">submit</button>
-        </form>
-        <div ng-show="bio">
-          <div class="label">bio
-            <div>
-              <p>{{bio}}</p>
-            </div>
+                    <button class="submit-bio" type="submit">submit</button>
+                </form>
+                <div ng-show="bio">
+                    <div class="label">bio
+                        <div class="bio-body">
+                            <p>{{bio}}</p>
+                        </div>
 
-          </div>
-        </div>
-      </div>
+                    </div>
+                </div>
+            </div>

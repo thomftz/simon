@@ -1,10 +1,13 @@
-<div class="gameshapecontainer" ng-show="signedIn">
-  <div class="gameshape">
-    <div class="topleft"></div>
-    <div class="topright"></div>
-    <div class="bottomleft"></div>
-    <div class="bottomright"></div>
+<div class="gameshapecontainer" ng-show="signedIn" ng>
+    <div class="gameshape">
+        <div class="topleft"></div>
+        <div class="topright"></div>
+        <div class="bottomleft"></div>
+        <div class="bottomright"></div>
 
-    <div class="centershape"><span>simon</span></div>
-  </div>
+        <div class="centershape">
+            <button ng-click="showtimer=true" ng-hide="showtimer" class="start-game">start</button>
+            <!-- <span class="timer" ng-show="showtimer"></span> -->
+        </div>
+    </div>
 </div>
