@@ -1,3 +1,4 @@
+asset 'jquery'
 asset 'angular'
 asset 'lodash'
 asset 'angular-ui-router'
