@@ -7,10 +7,15 @@
       });
     }
 
-    function setUsers() {
+    function postScores(points) {
       return $http({
-        method: 'PUT',
-        url: url
+        method: 'POST',
+        url: `/scores/${currentUser.id}.json`,
+        data: {
+          scores: {
+            points: points
+          }
+        }
       });
     }
 
@@ -26,31 +31,17 @@
       });
     }
 
-    // function deleteBio() {
-    //   return $http({
-    //     method: 'DELETE',
-    //     url: `/users/${currentUser.id}.json`,
-    //     // data: {
-    //     //   user: {
-    //     //     about: ''
-    //     //   }
-    //     // }
-    //   });
-    // }
 
-    function deleteStuff(url, about) {
+    function deleteStuff() {
       return $http({
         method: 'DELETE',
         url: `/users/${currentUser.id}.json`,
-        // data: {
-        //   user
-        // }
       });
     }
 
     return {
       get: getUsers,
-      set: setUsers,
+      post: postScores,
       delete: deleteStuff,
       patch: patchBio
     };

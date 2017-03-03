@@ -1,35 +1,50 @@
 (function(ng, currentUser) {
   ng.module('Simon').service('UserService', ['$q', '$state', 'DataService', function($q, $state, DataService) {
 
-    this.users = [];
-    this.pointsArr = [];
+    // this.users = [];
 
-    // this.getUsers = function() {
-    // };
-    function getUsers() {
-
-      return this.users;
+    function getUsers(usersArr) {
+      // console.log(usersArr);
+      return usersArr;
     }
 
-    this.getTotalScore = function() {
-      for (let i = 0; i < this.users.length; i++) {
-        let score = this.users[i].scores;
-        for (let j = 0; j < score.length; j++) {
-          console.log(score[j].points);
-          this.pointsArr.push(score[j].points);
-        }
-      }
-      let totalPoints = this.pointsArr.reduce((a, b) => a + b, 0);
-      this.points = totalPoints;
-      console.log(this.points);
-    };
+    // function getTotalScore(userArr) {
+    //   let pointsArr = [];
+    //   console.log(`pointsArr ${pointsArr}`);
+    //   for (let i = 0; i < userArr.length; i++) {
+    //     let score = userArr[i].scores;
+    //     console.log(`userArr[i] ${userArr[i]}`);
+    //     for (let j = 0; j < score.length; j++) {
+    //       console.log(`score[j].points ${score[j].points}`);
+    //       pointsArr.push(score[j].points);
+    //     }
+    //   }
+    //   let totalPoints = pointsArr.reduce((a, b) => a + b, 0);
+    //   getUsers(totalPoints);
+    //   console.log(totalPoints);
+    // }
+    // function getTotalScore(userArr) {
+    //   let pointsArr = [];
+    //   console.log(`pointsArr ${pointsArr}`);
+    //   for (let i = 0; i < userArr.length; i++) {
+    //     let score = userArr[i].scores;
+    //     console.log(`userArr[i] ${userArr[i]}`);
+    //     for (let j = 0; j < score.length; j++) {
+    //       console.log(`score[j].points ${score[j].points}`);
+    //       pointsArr.push(score[j].points);
+    //     }
+    //   }
+    //   let totalPoints = pointsArr.reduce((a, b) => a + b, 0);
+    //   getUsers(totalPoints);
+    //   console.log(totalPoints);
+    // }
 
     let btn = document.querySelector('.testbtn');
     btn.addEventListener('click', function() {});
 
     $q.when(DataService.get("/users.json")).then((response) => {
-      this.users = response.data;
-      this.getTotalScore();
+      let userArr = response.data;
+      getTotalScore(userArr);
       // console.log(response);
     }).catch((error) => {
       console.log(error);

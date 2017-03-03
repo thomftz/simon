@@ -17,7 +17,6 @@
           <span class="score">2,010pts</span>
         </div>
         <form ng-hide="bio" class="textarea-container" ng-submit="patchBioText(text)">
-
           <label> please enter your blurb
           <textarea ng-model="text"></textarea>
         </label>
@@ -25,13 +24,11 @@
         </form>
         <div ng-show="bio">
           <div class="label">bio
-            <!-- <div> -->
             <p>{{bio}}</p>
             <div class="buttons-container is-flex">
               <button class="edit-bio" type="submit" ng-click="toggleTextarea()">edit bio</button>
               <button class="delete-user" type="submit" ng-click="deleteUser()">delete user</button>
             </div>
-            <!-- </div> -->
           </div>
         </div>
       </div>
