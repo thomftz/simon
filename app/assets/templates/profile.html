@@ -25,10 +25,13 @@
         </form>
         <div ng-show="bio">
           <div class="label">bio
-            <div>
-              <p>{{bio}}</p>
-              <button class="delete-bio" type="submit">delete</button>
+            <!-- <div> -->
+            <p>{{bio}}</p>
+            <div class="buttons-container is-flex">
+              <button class="edit-bio" type="submit" ng-click="toggleTextarea()">edit bio</button>
+              <button class="delete-user" type="submit" ng-click="deleteUser()">delete user</button>
             </div>
+            <!-- </div> -->
           </div>
         </div>
       </div>
