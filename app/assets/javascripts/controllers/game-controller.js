@@ -59,7 +59,7 @@
             turnDisplay.appendChild(countDown);
             startTimer = setInterval(function() {
                 timer--;
-                document.querySelector('.count-down').value = timer;
+                $('.count-down').val(timer);
                 if (timer === 0) {
                     clearInterval(startTimer);
                     countDown.innerHTML = 'you lose trickkk';
@@ -69,15 +69,7 @@
 
             }, 1000);
         };
-        // start.onclick = function() {
-        //     setInterval(function() {
-        //         timer--;
-        //         document.querySelector('.count-down').value = timer;
-        //         if (timer < 0)
-        //             clearInterval(startTimer);
-        //         countDown.innerHTML = `${timer}`;
-        //     }, 1000);
-        // };
+
 
     }]);
 })(angular);
