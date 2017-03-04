@@ -1,5 +1,5 @@
-.shit {
-    background: black;
+.slice {
+
 }
 
 .gameshapecontainer {
@@ -12,6 +12,7 @@
         display: flex;
         flex-flow: row wrap;
         width: 450px;
+
 
         .topleft {
             padding: 1%;
@@ -46,11 +47,11 @@
             height: 200px;
             width: 200px;
             border-bottom-left-radius: 12rem;
+            .is-active {
+              background: #89dfff;
+            }
         }
 
-        .bottomleft:active {
-            background: #89dfff;
-        }
 
         .bottomright {
             margin: 1%;
@@ -59,12 +60,15 @@
             height: 200px;
             width: 200px;
             border-bottom-right-radius: 12rem;
-        }
-
-        .bottomright:active {
-            background: #ffe093;
+            .is-active {
+              background: #ffe093;
+            }
         }
     }
+}
+
+.select {
+  background: rgba(0, 0, 0, .2) !important;
 }
 
 .centershape {
@@ -101,8 +105,11 @@
     }
 
     .count-down {
-        color: white;
-        margin-bottom: 2%;
-        font-family: $primaryFont;
+      color: white;
+      margin-bottom: 2%;
+      font-size: 50%;
+      width: 100%;
+      text-align: center;
+      font-family: $primaryFont;
     }
 }
