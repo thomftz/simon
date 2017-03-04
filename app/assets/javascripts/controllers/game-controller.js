@@ -11,16 +11,22 @@
         let countDown = document.createElement('span');
         let start = document.querySelector('.start-game');
         let patternArray = [];
+        let userArr = [];
         let num = 0;
+        let doodoo = 'katie';
         const slices = [red, green, blue, yellow];
 
         start.onclick = function() {
             $scope.gamePattern();
         };
 
-        $('.slice').on('click', function() {
+        $('.slice').on('mousedown mouseup', function() {
             console.log($(this).data('id'));
+            $(this).toggleClass('select');
         });
+        // $('.slice').mousedown(function() {
+        //   console.log('in');
+        // });
 
         $scope.gamePattern = function() {
             while (patternArray.length < slices.length) {
@@ -39,21 +45,24 @@
                     setTimeout(function() {
                         console.log(patternArray[i]);
 
-                        $(`.slice[data-id=${patternArray[i]}]`).toggleClass('is-active');
+                        $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
                     }, 1000);
-                    $(`.slice[data-id=${patternArray[i]}]`).toggleClass('is-active');
+                    $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
                     num++;
                     console.log('nummmmmmm', num);
                     if (num == patternArray.length) {
-                        $scope.startGame();
+                        setTimeout(function() {
+                            $scope.startGame();
+
+                        }, 1500);
                     }
                 }, i * 1500, i);
             }
-
         };
 
         $scope.startGame = function() {
             console.log('in');
+
             countDown.className = 'count-down';
             countDown.innerHTML = `${timer}`;
             turnDisplay.appendChild(countDown);
@@ -62,14 +71,12 @@
                 $('.count-down').val(timer);
                 if (timer === 0) {
                     clearInterval(startTimer);
-                    countDown.innerHTML = 'you lose trickkk';
+                    countDown.innerHTML = `you lose ${currentUser.name}`;
                 } else {
                     countDown.innerHTML = `${timer}`;
                 }
-
             }, 1000);
         };
-
 
     }]);
 })(angular);
