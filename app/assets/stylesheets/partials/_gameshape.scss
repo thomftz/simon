@@ -1,6 +1,3 @@
-.shit {
-  background: black;
-}
 .gameshapecontainer {
     position: absolute;
     left: 35%;
@@ -11,6 +8,7 @@
         display: flex;
         flex-flow: row wrap;
         width: 450px;
+
         .topleft {
             padding: 1%;
             margin: 1%;
@@ -18,10 +16,10 @@
             height: 200px;
             width: 200px;
             border-top-left-radius: 12rem;
-        }
 
-        .topleft:active {
-            background: #ff8d89;
+            .is-active {
+                background: #ff8d89;
+            }
         }
 
         .topright {
@@ -31,10 +29,10 @@
             height: 200px;
             width: 200px;
             border-top-right-radius: 12rem;
-        }
 
-        .topright:active {
-            background: #a7ff89;
+            .is-active {
+                background: #a7ff89;
+            }
         }
 
         .bottomleft {
@@ -44,10 +42,10 @@
             height: 200px;
             width: 200px;
             border-bottom-left-radius: 12rem;
-        }
 
-        .bottomleft:active {
-            background: #89dfff;
+            .is-active {
+                background: #89dfff;
+            }
         }
 
         .bottomright {
@@ -57,14 +55,18 @@
             height: 200px;
             width: 200px;
             border-bottom-right-radius: 12rem;
-        }
 
-        .bottomright:active {
-            background: #ffe093;
+            .is-active {
+                background: #ffe093;
+            }
         }
     }
 }
 
+.select {
+    border: 8px solid white;
+    background: rgba(255, 187, 151, .7) !important;
+}
 
 .centershape {
     position: relative;
@@ -99,9 +101,13 @@
         }
     }
 
-    .count-down {
+    .center-display {
         color: white;
         margin-bottom: 2%;
+        font-size: 50%;
+        width: 100%;
+        text-align: center;
         font-family: $primaryFont;
+        padding: 5%;
     }
 }

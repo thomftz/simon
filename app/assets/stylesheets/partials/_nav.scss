@@ -11,8 +11,9 @@
     header {
         font-family: $headerFont;
         font-size: 4rem;
+
         &:hover {
-          cursor: pointer;
+            cursor: pointer;
         }
     }
 
@@ -25,58 +26,63 @@
         font-size: 2.5rem;
 
         li {
-          align-content: center;
-          border-radius: 1rem;
-          // border: 1px solid black;
-          padding: 3%;
-          &:hover {
-            color: white;
-            cursor: pointer;
-          }
-        }
+            align-content: center;
+            border-radius: 1rem;
+            // border: 1px solid black;
+            padding: 3%;
 
+            &:hover {
+                color: white;
+                cursor: pointer;
+            }
+        }
     }
 }
+
 .fat-header {
-  text-align: center;
-  font-size: 9rem;
+    text-align: center;
+    font-size: 9rem;
 }
+
 .g-active {
-  background: #ed615c;
-  color: white;
-
+    background: #ed615c;
+    color: white;
 }
+
 .h-active {
-  background: #5dc8ef;
-  color: white;
-
+    background: #5dc8ef;
+    color: white;
 }
-.l-active {
-  background: #edc65c;
-  color: white;
 
+.l-active {
+    background: #edc65c;
+    color: white;
 }
 
 .game {
-  &:hover {
-    background: #ed615c;
-  }
+    &:hover {
+        background: #ed615c;
+    }
 }
+
 .home {
-  &:hover {
-    background: #5dc8ef;
-  }
+    &:hover {
+        background: #5dc8ef;
+    }
 }
+
 .leaderboard {
-  &:hover {
-    background: #edc65c;
-  }
+    &:hover {
+        background: #edc65c;
+    }
 }
 
 .profile-user-left {
-  width: 7rem;
+    width: 7rem;
+    font-family: $primaryFont;
+    padding: 0.5%;
 }
 
 .is-hidden {
-  display: none;
+    display: none;
 }
