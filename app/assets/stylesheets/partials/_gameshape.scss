@@ -64,7 +64,8 @@
 }
 
 .select {
-    background: rgba(0, 0, 0, .2) !important;
+    border: 8px solid white;
+    background: rgba(255, 187, 151, .7) !important;
 }
 
 .centershape {
@@ -100,7 +101,7 @@
         }
     }
 
-    .count-down {
+    .center-display {
         color: white;
         margin-bottom: 2%;
         font-size: 50%;
