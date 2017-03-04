@@ -13,6 +13,7 @@
     let patternArray = [];
     let userArr = [];
     let num = 0;
+    let doodoo = 'katie';
     const slices = [red, green, blue, yellow];
 
     start.onclick = function() {
