@@ -5,12 +5,13 @@
         let red = $('.topleft').data('id');
         let blue = $('.bottomleft').data('id');
         let yellow = $('.bottomright').data('id');
-        let timer = 4;
+        let timer = 20;
         // let timerEnd = 0;
         let turnDisplay = document.querySelector('.centershape');
         let countDown = document.createElement('span');
         let start = document.querySelector('.start-game');
         let patternArray = [];
+        let num = 0;
         const slices = [red, green, blue, yellow];
 
         start.onclick = function() {
@@ -37,27 +38,46 @@
                 setTimeout(function(i) {
                     setTimeout(function() {
                         console.log(patternArray[i]);
+
                         $(`.slice[data-id=${patternArray[i]}]`).toggleClass('active');
                     }, 1000);
                     $(`.slice[data-id=${patternArray[i]}]`).toggleClass('active');
+                    num++;
+                    console.log('nummmmmmm', num);
+                    if (num == patternArray.length) {
+                        $scope.startGame();
+                    }
                 }, i * 1500, i);
             }
+
         };
 
         $scope.startGame = function() {
+            console.log('in');
             countDown.className = 'count-down';
             countDown.innerHTML = `${timer}`;
             turnDisplay.appendChild(countDown);
-        };
-        start.onclick = function() {
-            setInterval(function() {
+            startTimer = setInterval(function() {
                 timer--;
                 document.querySelector('.count-down').value = timer;
-                if (timer < 0)
+                if (timer === 0) {
                     clearInterval(startTimer);
-                countDown.innerHTML = `${timer}`;
+                    countDown.innerHTML = 'you lose trickkk';
+                } else {
+                    countDown.innerHTML = `${timer}`;
+                }
+
             }, 1000);
         };
+        // start.onclick = function() {
+        //     setInterval(function() {
+        //         timer--;
+        //         document.querySelector('.count-down').value = timer;
+        //         if (timer < 0)
+        //             clearInterval(startTimer);
+        //         countDown.innerHTML = `${timer}`;
+        //     }, 1000);
+        // };
 
     }]);
 })(angular);
