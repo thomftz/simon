@@ -21,13 +21,50 @@
         };
 
         $('.slice').on('mousedown mouseup', function() {
-            console.log($(this).data('id'));
             $(this).toggleClass('select');
         });
-        // $('.slice').mousedown(function() {
-        //   console.log('in');
-        // });
 
+        $('.slice').on('click', function() {
+            console.log($(this).data('id'));
+            userArr.push($(this).data('id'));
+            console.log(userArr);
+            $scope.checkPattern();
+        });
+        $scope.checkPattern = function() {
+            if (userArr[0]) {
+                if (patternArray[0] === userArr[0]) {
+                    console.log('in');
+                } else {
+                    alert('u lose');
+                }
+            }
+            if (userArr[1]) {
+                if (patternArray[1] === userArr[1]) {
+                    console.log('in1');
+                } else {
+                    alert('u lose');
+                }
+            }
+
+            if (userArr[2]) {
+                if (patternArray[2] === userArr[2]) {
+                    console.log('in2');
+                } else {
+                    alert('u lose');
+
+                }
+            }
+            if (userArr[3]) {
+                if (patternArray[3] === userArr[3]) {
+                    console.log('in3');
+                } else {
+                    alert('u lose');
+
+                }
+            }
+
+
+        };
         $scope.gamePattern = function() {
             while (patternArray.length < slices.length) {
                 let rand = slices[Math.floor(Math.random() * slices.length)];
