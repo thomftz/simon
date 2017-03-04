@@ -44,7 +44,7 @@
 
     $q.when(DataService.get("/users.json")).then((response) => {
       let userArr = response.data;
-      getTotalScore(userArr);
+      // getTotalScore(userArr);
       // console.log(response);
     }).catch((error) => {
       console.log(error);
