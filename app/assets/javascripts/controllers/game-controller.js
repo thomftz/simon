@@ -12,11 +12,12 @@
         let start = document.querySelector('.start-game');
         let patternArray = [];
         let userArr = [];
+        let arrayMatch = false;
         let num = 0;
         let points = 0;
         let score = 0;
         let doodoo = 'katie';
-        let slices = ['1'];
+        let slices = 1;
 
         start.onclick = function() {
             $scope.gamePattern();
@@ -29,74 +30,42 @@
         $('.slice').on('click', function() {
             console.log($(this).data('id'));
             userArr.push($(this).data('id'));
-            console.log('patternArray', patternArray);
-            console.log('userarray', userArr);
-            $scope.checkPattern();
+            for (var i = 0; i < userArr.length; i++) {
+                if (patternArray === userArr) {
+                    arrayMatch = true;
+                    return arrayMatch;
+                }
+            }
+            console.log('arraymatch', arrayMatch);
+            $scope.checkPattern(arrayMatch);
         });
 
         $scope.checkPattern = function() {
+            for (let i = 0; i < patternArray.length; i++) {
+                if (arrayMatch) {
+                    $('.center-display').html(`round ${slices - 1}`);
+                    console.log('win round');
+                    $scope.gamePattern();
+                } else {
+                    console.log('lost', patternArray, userArr);
+                    $('.center-display').html(`you lose ${currentUser.name}, lol`);
+                }
+            }
 
-            // if (patternArray == userArr) {
-            //     $('.center-display').html(`round ${slices - 1}`);
-            //     console.log('win');
-            //     slices++;
-            //     gamePattern();
+            // if (patternArray === userArr) {
+            //     console.log('you should win', patternArray, userArr);
+            //     $('.center-display').html(`you win ${currentUser.name}, you asshole`);
             // } else {
+            //   console.log('aaaaaah');
             //     $('.center-display').html(`you lose ${currentUser.name}, lol`);
+            //
             // }
-            if (userArr[0]) {
-                if (patternArray[0] === userArr[0]) {
-                    console.log('in1');
-                } else {
-                    $('.center-display').html(`you lose ${currentUser.name}, lol`);
 
-                }
-            }
-            if (userArr[1]) {
-                if (patternArray[1] === userArr[1]) {
-                    console.log('in1');
-                } else {
-                    $('.center-display').html(`you lose ${currentUser.name}, lol`);
-                    let score = points + 50;
-                    $scope.addScore(score);
-                }
-            }
-
-            if (userArr[1]) {
-                if (patternArray[1] === userArr[1]) {
-                    console.log('in1');
-                } else {
-                    $('.center-display').html(`you lose ${currentUser.name}, lol`);
-                    let score = points + 50;
-                    $scope.addScore(score);
-                }
-            }
-
-            if (userArr[2]) {
-                if (patternArray[2] === userArr[2]) {
-                    console.log('in2');
-                } else {
-                    $('.center-display').html(`you lose ${currentUser.name}, lol`);
-                    let score = points + 75;
-                    $scope.addScore(score);
-                }
-            }
-            if (userArr[3]) {
-                if (patternArray[3] === userArr[3]) {
-                    console.log('in3');
-                    $('.center-display').html(`you win ${currentUser.name}, you asshole`);
-                    let score = points + 100;
-                    $scope.addScore(score);
-                } else {
-                    $('.center-display').html(`you lose ${currentUser.name}, lol`);
-
-                }
-            }
 
 
         };
         $scope.gamePattern = function() {
-            while (patternArray.length < slices.length) {
+            while (patternArray.length < slices) {
                 let rand = Math.floor(Math.random() * 4);
                 console.log('slices', slices);
                 patternArray.push(rand);
@@ -118,6 +87,7 @@
                     $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
                     num++;
                     slices++;
+                    console.log('slice o pie', slices);
                     console.log('nummmmmmm', num);
                     if (num == patternArray.length) {
                         setTimeout(function() {
