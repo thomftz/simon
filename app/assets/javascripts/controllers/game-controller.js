@@ -16,7 +16,7 @@
         let points = 0;
         let score = 0;
         let doodoo = 'katie';
-        const slices = [red, green, blue, yellow];
+        let slices = ['1'];
 
         start.onclick = function() {
             $scope.gamePattern();
@@ -29,17 +29,39 @@
         $('.slice').on('click', function() {
             console.log($(this).data('id'));
             userArr.push($(this).data('id'));
-            console.log(userArr);
+            console.log('patternArray', patternArray);
+            console.log('userarray', userArr);
             $scope.checkPattern();
         });
+
         $scope.checkPattern = function() {
+
+            // if (patternArray == userArr) {
+            //     $('.center-display').html(`round ${slices - 1}`);
+            //     console.log('win');
+            //     slices++;
+            //     gamePattern();
+            // } else {
+            //     $('.center-display').html(`you lose ${currentUser.name}, lol`);
+            // }
             if (userArr[0]) {
                 if (patternArray[0] === userArr[0]) {
-                    console.log('in');
+                    console.log('in1');
                 } else {
                     $('.center-display').html(`you lose ${currentUser.name}, lol`);
+
                 }
             }
+            if (userArr[1]) {
+                if (patternArray[1] === userArr[1]) {
+                    console.log('in1');
+                } else {
+                    $('.center-display').html(`you lose ${currentUser.name}, lol`);
+                    let score = points + 50;
+                    $scope.addScore(score);
+                }
+            }
+
             if (userArr[1]) {
                 if (patternArray[1] === userArr[1]) {
                     console.log('in1');
@@ -75,10 +97,11 @@
         };
         $scope.gamePattern = function() {
             while (patternArray.length < slices.length) {
-                let rand = slices[Math.floor(Math.random() * slices.length)];
+                let rand = Math.floor(Math.random() * 4);
+                console.log('slices', slices);
                 patternArray.push(rand);
+
             }
-            console.log(patternArray);
             setTimeout(function() {
                 $scope.lightGame();
             }, 1000);
@@ -94,6 +117,7 @@
                     }, 1000);
                     $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
                     num++;
+                    slices++;
                     console.log('nummmmmmm', num);
                     if (num == patternArray.length) {
                         setTimeout(function() {
