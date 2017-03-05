@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="Simon">
+  <head>
+    <title>Simon</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body ng-controller="ProfileController">
+    <%= yield %>
+    <script>
+    var currentUser = <%= raw current_user.to_json %>
+    var loggedInUser = <%= raw User.find_by_id(session[:user_id]).to_json %>
+    </script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

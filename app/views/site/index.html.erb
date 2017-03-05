@@ -1,0 +1,29 @@
+<button class="testbtn">test</button>
+
+<header class="fat-header" ng-hide="signedIn">simon</header>
+<div class="navbar">
+    <header ui-sref="ParentState.profile" >simon</header>
+    <ul ng-show="signedIn">
+        <li class="home" ui-sref-active="h-active" ui-sref="ParentState.profile">Home</li>
+        <li class="game" ui-sref-active="g-active" ui-sref="ParentState.game">Game</li>
+        <li class="leaderboard" ui-sref-active="l-active" ui-sref="ParentState.leaderboard">Leaderboard</li>
+    </ul>
+</div>
+<div class="login-out">
+  <% unless current_user %>
+<div class="main-form-container is-flex">
+  <h1>Welcome to Simon</h1>
+  <img class="icon-md" src="/images/logo.png" alt="simon logo" />
+    <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+  <% end %>
+</div>
+
+<div class="profile-user-left" >
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% end %>
+</div>
+</div>
+
+<ui-view></ui-view>

@@ -1,0 +1,37 @@
+.main-form-container {
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin: 10px auto;
+  width: 300px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.4);
+
+  img {
+    width: 60%;
+    text-align: center;
+    margin: 5px;
+  }
+  a {
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-family: 'Monofett', cursive;
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  strong {
+    font-family: 'Sirin Stencil', cursive;
+    font-size: 2rem;
+  }
+}
+
+.is-flex {
+  display: flex;
+}
