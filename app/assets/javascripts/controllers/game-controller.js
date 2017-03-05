@@ -49,7 +49,7 @@
         $scope.checkPattern = function(arrayMatch) {
             console.log('arrayMatch', arrayMatch);
 
-            if (arrayMatch) {
+            if (arrayMatch == true) {
                 $('.center-display').html(`round ${slices}`);
                 slices++;
                 userArr = [];
