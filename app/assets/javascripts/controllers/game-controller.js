@@ -7,19 +7,29 @@
     let yellow = $('.bottomright').data('id');
     // let timer = 20;
     // let timerEnd = 0;
-    let turnDisplay = document.querySelector('.centershape');
-    // let centerDisplay = document.createElement('span');
-    let start = document.querySelector('.start-game');
+    const centerShape = $('.centershape');
+    const between = $('.between');
+    let start = $('.start-game');
     let patternArray = [];
     let userArr = [];
     let num = 0;
     let points = 0;
     let score = 0;
     let doodoo = 'katie';
-    $scope.round = 0;
-    $scope.status = null;
+    $scope.status = '';
+    $scope.round = 1;
+    $scope.betweenRounds = false;
+    $scope.lose = 'you lose';
+    //
+    // $scope.$watch('betweenRounds', function(newValue, oldValue) {
+    //   console.log('shiiiit');
+    // });
+    // $scope.$digest();
 
-    start.onclick = function() {
+
+
+    $scope.start = function() {
+      $scope.status = 'ready!';
       $scope.gamePattern();
     };
 
@@ -34,21 +44,27 @@
       $scope.checkPattern();
     });
 
+    $scope.youLose = function() {
+      $scope.$apply(function() {
+        $scope.betweenRounds = true;
+        console.log('you lost');
+      });
+    };
+
     $scope.checkPattern = function() {
       if (userArr[0]) {
-        if (patternArray[0] === userArr[0]) {
-          // console.log('in');
+        if (userArr[0] != patternArray[0]) {
+          console.log('incorrect');
+          $scope.youLose();
         } else {
-          $('.center-display').html(`you lose ${currentUser.name}, lol`);
+          console.log('1correct');
         }
       }
       if (userArr[1]) {
-        if (patternArray[1] === userArr[1]) {
-          // console.log('in1');
+        if (userArr[1] != patternArray[1]) {
+          $scope.youLose();
         } else {
-          $('.center-display').html(`you lose ${currentUser.name}, lol`);
-          let score = points + 50;
-          // $scope.addScore(score);
+          console.log('2correct');
         }
       }
 
@@ -65,8 +81,8 @@
         console.log('in3');
         if (patternArray[3] === userArr[3]) {
           $('.center-display').html('nice!');
-          let score = points + 100;
-          $scope.addScore(score);
+          let score = 25;
+          // $scope.addScore(score);
         } else {
           $('.center-display').html(`you lose ${currentUser.name}, lol`);
 
@@ -87,7 +103,6 @@
     };
 
     $scope.lightGame = function() {
-      $scope.status = 'ready!';
       for (let i = 0; i < patternArray.length; i++) {
         setTimeout(function(i) {
           setTimeout(function() {
@@ -104,15 +119,27 @@
       }
     };
 
-    $scope.startGame = function() {
-      centerDisplay.className = 'center-display';
-      $scope.status = 'play!';
+    $scope.startGame = () => {
+      console.log('start game');
+      $scope.$apply(function() {
+        $scope.status = 'go!';
+      });
+
+      // $scope.status = 'play!';
       // turnDisplay.appendChild(centerDisplay);
     };
 
     // $scope.addScore = function(score) {
     //   console.log('scores', score);
     // };
+    $scope.resetRound = function() {
+      patternArray = [];
+      // $scope.$apply(function() {
+      $scope.betweenRounds = false;
+      console.log('scope reset');
+      // });
+      console.log('reset');
+    };
 
   }]);
 })(angular);
