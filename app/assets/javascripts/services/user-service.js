@@ -1,7 +1,7 @@
 (function(ng, currentUser) {
   ng.module('Simon').service('UserService', ['$q', '$state', 'DataService', function($q, $state, DataService) {
 
-    // this.users = [];  
+    // this.users = [];
     function updateScore(num) {
       console.log(num);
       $q.when(DataService.patchScore(num)).then((response) => {
@@ -17,7 +17,7 @@
       userArr.forEach(function(user) {
 
         let scores = user.scores;
-        console.log(scores);
+        // console.log(scores);
 
         // scores.forEach(function(score) {
         //
@@ -26,7 +26,7 @@
         // });
         for (let i = 0; i < scores.length; i++) {
           let shit = scores[i++].points;
-          console.log(shit);
+          // console.log(shit);
           // console.log(user.scores[i]);
         }
       });
