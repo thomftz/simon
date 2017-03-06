@@ -20,12 +20,6 @@
     $scope.round = 1;
     $scope.betweenRounds = false;
     $scope.lose = 'you lose';
-    //
-    // $scope.$watch('betweenRounds', function(newValue, oldValue) {
-    //   console.log('shiiiit');
-    // });
-    // $scope.$digest();
-
 
 
     $scope.start = function() {
@@ -67,30 +61,23 @@
           console.log('2correct');
         }
       }
-
       if (userArr[2]) {
-        if (patternArray[2] === userArr[2]) {
-          // console.log('in2');
+        if (userArr[2] != patternArray[2]) {
+          $scope.youLose();
         } else {
-          $('.center-display').html(`you lose ${currentUser.name}, lol`);
-          let score = points + 75;
-          // $scope.addScore(score);
+          console.log('3correct');
         }
       }
       if (userArr[3]) {
-        console.log('in3');
-        if (patternArray[3] === userArr[3]) {
-          $('.center-display').html('nice!');
-          let score = 25;
-          // $scope.addScore(score);
+        console.log('in');
+        if (userArr[3] != patternArray[3]) {
+          $scope.youLose();
         } else {
-          $('.center-display').html(`you lose ${currentUser.name}, lol`);
-
+          console.log('you win!');
         }
       }
-
-
     };
+
     $scope.gamePattern = function() {
       while (patternArray.length < 4) {
         let rand = Math.floor(Math.random() * 4);
@@ -124,20 +111,13 @@
       $scope.$apply(function() {
         $scope.status = 'go!';
       });
-
-      // $scope.status = 'play!';
-      // turnDisplay.appendChild(centerDisplay);
     };
 
-    // $scope.addScore = function(score) {
-    //   console.log('scores', score);
-    // };
     $scope.resetRound = function() {
+      $scope.status = '';
       patternArray = [];
-      // $scope.$apply(function() {
+      userArr = [];
       $scope.betweenRounds = false;
-      console.log('scope reset');
-      // });
       console.log('reset');
     };
 
