@@ -1,8 +1,7 @@
 (function(ng, currentUser) {
   ng.module('Simon').service('UserService', ['$q', '$state', 'DataService', function($q, $state, DataService) {
 
-    // this.users = [];
-
+    // this.users = [];  
     function updateScore(num) {
       console.log(num);
       $q.when(DataService.patchScore(num)).then((response) => {

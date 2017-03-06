@@ -1,24 +1,23 @@
 (function(ng) {
   ng.module('Simon').controller('GameController', ['$scope', '$q', 'UserService', function($scope, $q, UserService) {
-    $('.testbtn').on('click', function() {
-      UserService.updateScore(9);
-    });
+
     let green = $('.topright').data('id');
     let red = $('.topleft').data('id');
     let blue = $('.bottomleft').data('id');
     let yellow = $('.bottomright').data('id');
     // let timer = 20;
     // let timerEnd = 0;
+    let gameShape = document.querySelector('.gameshape');
     let turnDisplay = document.querySelector('.centershape');
     let centerDisplay = document.createElement('span');
     let start = document.querySelector('.start-game');
-    let patternArray = [];
+    let patternArr = [];
     let userArr = [];
-    let arrayMatch = false;
+    let arrayMatch;
+    let correctArr = [];
     let num = 0;
     let points = 0;
     let score = 0;
-    let doodoo = 'katie';
     let slices = 1;
 
     start.onclick = function() {
@@ -30,47 +29,44 @@
     });
 
     $('.slice').on('click', function() {
-      console.log($(this).data('id'));
+      console.log('userarr', $(this).data('id'));
       userArr.push($(this).data('id'));
-      for (var i = 0; i < userArr.length; i++) {
-        if (patternArray === userArr) {
-          arrayMatch = true;
-          return arrayMatch;
+      if (patternArr.length === userArr.length) {
+        for (var i = 0; i < patternArr.length; i++) {
+          if (patternArr[i] === userArr[i]) {
+            arrayMatch = true;
+          } else if (patternArr[i] !== userArr[i]) {
+            arrayMatch = false;
+          }
         }
+        $scope.patternCheck();
       }
-      console.log('arraymatch', arrayMatch);
-      $scope.checkPattern(arrayMatch);
+
     });
-
-    $scope.checkPattern = function() {
-      for (let i = 0; i < patternArray.length; i++) {
-        if (arrayMatch) {
-          $('.center-display').html(`round ${slices - 1}`);
-          console.log('win round');
-          $scope.gamePattern();
-        } else {
-          console.log('lost', patternArray, userArr);
-          $('.center-display').html(`you lose ${currentUser.name}, lol`);
-        }
-      }
-
-      // if (patternArray === userArr) {
-      //     console.log('you should win', patternArray, userArr);
-      //     $('.center-display').html(`you win ${currentUser.name}, you asshole`);
-      // } else {
-      //   console.log('aaaaaah');
-      //     $('.center-display').html(`you lose ${currentUser.name}, lol`);
-      //
-      // }
-
-
+    $scope.endGame = function() {
+      $('.center-display').html('you looooooose');
 
     };
+
+    $scope.patternCheck = function() {
+      if (arrayMatch !== true) {
+        $scope.endGame();
+
+      } else {
+        $('.center-display').html(`round ${slices}`);
+        slices++;
+        userArr = [];
+        console.log('win', userArr);
+        $scope.gamePattern();
+      }
+    };
+
+
     $scope.gamePattern = function() {
-      while (patternArray.length < slices) {
+      while (patternArr.length < slices) {
         let rand = Math.floor(Math.random() * 4);
-        console.log('slices', slices);
-        patternArray.push(rand);
+        patternArr.push(rand);
+        console.log('pattern', patternArr);
 
       }
       setTimeout(function() {
@@ -79,22 +75,16 @@
     };
 
     $scope.lightGame = function() {
-      for (let i = 0; i < patternArray.length; i++) {
+      for (let i = 0; i < patternArr.length; i++) {
         setTimeout(function(i) {
           setTimeout(function() {
-            console.log(patternArray[i]);
-
-            $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
+            $(`.slice[data-id=${patternArr[i]}]`).toggleClass('select');
           }, 1000);
-          $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
+          $(`.slice[data-id=${patternArr[i]}]`).toggleClass('select');
           num++;
-          slices++;
-          console.log('slice o pie', slices);
-          console.log('nummmmmmm', num);
-          if (num == patternArray.length) {
+          if (num == patternArr.length) {
             setTimeout(function() {
               $scope.startGame();
-
             }, 1500);
           }
         }, i * 1500, i);
@@ -102,7 +92,6 @@
     };
 
     $scope.startGame = function() {
-      console.log('in');
       centerDisplay.className = 'center-display';
       centerDisplay.innerHTML = 'play!';
       turnDisplay.appendChild(centerDisplay);
