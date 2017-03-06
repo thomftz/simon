@@ -4,6 +4,7 @@
     // this.users = [];
 
     function updateScore(num) {
+      console.log(num);
       $q.when(DataService.patchScore(num)).then((response) => {
 
         console.log(response.data);
@@ -15,19 +16,20 @@
     function getTotalScore(userArr) {
       let pointsArr = [];
       userArr.forEach(function(user) {
-        // console.log(user.scores);
-        let scores = user.scores;
 
-        scores.forEach(function(score) {
-          pointsArr.push(score.points);
-          // let points = new Array(score.points);
-          // console.log(pointsArr);
-        });
-        // for (let i = 0; i < user.scores.length; i++) {
-        //   let arr = new Array(user.scores[i].points);
-        //   console.log(arr);
-        //   // console.log(user.scores[i]);
-        // }
+        let scores = user.scores;
+        console.log(scores);
+
+        // scores.forEach(function(score) {
+        //
+        //   console.log(score.points);
+        //
+        // });
+        for (let i = 0; i < scores.length; i++) {
+          let shit = scores[i++].points;
+          console.log(shit);
+          // console.log(user.scores[i]);
+        }
       });
       // for (let i = 0; i < userArr.length; i++) {
       //   let score = userArr[i].scores;
@@ -36,7 +38,6 @@
       //     let arr = new Array(i);
       //     console.log(arr);
       //   });
-
 
       //     for (let j = 0; j < score.length; j++) {
       //       // console.log(`score[j].points ${score[j].points}`);
@@ -60,7 +61,7 @@
       //     }
       //   }
       //   let totalPoints = pointsArr.reduce((a, b) => a + b, 0);
-      //   getUsers(totalPoints);
+      //   // getUsers(totalPoints);
       //   console.log(totalPoints);
     }
 

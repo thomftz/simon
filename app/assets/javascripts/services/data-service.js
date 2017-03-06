@@ -22,10 +22,9 @@
     function patchScore(points) {
       return $http({
         method: 'PATCH',
-        url: `/scores.json`,
+        url: `/scores/${currentUser.id}`,
         data: {
           scores: {
-            user_id: 27,
             points: points
           }
         }
