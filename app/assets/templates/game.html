@@ -1,12 +1,20 @@
-<div class="gameshapecontainer" ng-show="signedIn">
+<div class="gameshapecontainer is-flex" ng-show="signedIn">
   <div class="gameshape">
     <div data-id="0" class="slice topleft" id=""></div>
     <div data-id="1" class="slice topright" id=""></div>
     <div data-id="2" class="slice bottomleft" id=""></div>
     <div data-id="3" class="slice bottomright" id=""></div>
 
-    <div class="centershape">
-      <button ng-click="showtimer=true" ng-hide="showtimer" class="start-game">start</button>
+    <div class="centershape is-flex">
+      <span class="round">round: {{round}}</span>
+      <div class="gameBtn-container is-flex">
+
+        <button class="start-game">start</button>
+        <button class="reset-game">reset</button>
+      </div>
+      <span class="round">{{status}}</span>
+      <!-- <button ng-click="showtimer=true" ng-hide="showtimer" class="start-game">start</button>
+      <button ng-click="showtimer=true" ng-hide="showtimer" class="start-game">start</button> -->
       <!-- <span class="timer" ng-show="showtimer"></span> -->
     </div>
   </div>

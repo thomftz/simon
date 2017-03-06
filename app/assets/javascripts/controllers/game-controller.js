@@ -8,7 +8,7 @@
     // let timer = 20;
     // let timerEnd = 0;
     let turnDisplay = document.querySelector('.centershape');
-    let centerDisplay = document.createElement('span');
+    // let centerDisplay = document.createElement('span');
     let start = document.querySelector('.start-game');
     let patternArray = [];
     let userArr = [];
@@ -16,7 +16,8 @@
     let points = 0;
     let score = 0;
     let doodoo = 'katie';
-    const slices = [red, green, blue, yellow];
+    $scope.round = 0;
+    $scope.status = null;
 
     start.onclick = function() {
       $scope.gamePattern();
@@ -26,8 +27,7 @@
       $(this).toggleClass('select');
     });
 
-    $('.pad').on('click', function() {
-      console.log('in');
+    $('.slice').on('click', function() {
       console.log($(this).data('id'));
       userArr.push($(this).data('id'));
       console.log(userArr);
@@ -48,7 +48,7 @@
         } else {
           $('.center-display').html(`you lose ${currentUser.name}, lol`);
           let score = points + 50;
-          $scope.addScore(score);
+          // $scope.addScore(score);
         }
       }
 
@@ -58,13 +58,13 @@
         } else {
           $('.center-display').html(`you lose ${currentUser.name}, lol`);
           let score = points + 75;
-          $scope.addScore(score);
+          // $scope.addScore(score);
         }
       }
       if (userArr[3]) {
+        console.log('in3');
         if (patternArray[3] === userArr[3]) {
-          // console.log('in3');
-          $('.center-display').html(`you win ${currentUser.name}, you asshole`);
+          $('.center-display').html('nice!');
           let score = points + 100;
           $scope.addScore(score);
         } else {
@@ -76,8 +76,8 @@
 
     };
     $scope.gamePattern = function() {
-      while (patternArray.length < slices.length) {
-        let rand = slices[Math.floor(Math.random() * slices.length)];
+      while (patternArray.length < 4) {
+        let rand = Math.floor(Math.random() * 4);
         patternArray.push(rand);
       }
       console.log(patternArray);
@@ -87,35 +87,32 @@
     };
 
     $scope.lightGame = function() {
+      $scope.status = 'ready!';
       for (let i = 0; i < patternArray.length; i++) {
         setTimeout(function(i) {
           setTimeout(function() {
-            console.log(patternArray[i]);
             $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
           }, 1000);
           $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
           num++;
-          console.log('nummmmmmm', num);
           if (num == patternArray.length) {
             setTimeout(function() {
               $scope.startGame();
-
             }, 1500);
           }
-        }, i * 1000, i);
+        }, i * 1500, i);
       }
     };
 
     $scope.startGame = function() {
-      $('.slice').addClass('pad');
       centerDisplay.className = 'center-display';
-      centerDisplay.innerHTML = 'play!';
-      turnDisplay.appendChild(centerDisplay);
+      $scope.status = 'play!';
+      // turnDisplay.appendChild(centerDisplay);
     };
 
-    $scope.addScore = function(score) {
-      console.log('scores', score);
-    };
+    // $scope.addScore = function(score) {
+    //   console.log('scores', score);
+    // };
 
   }]);
 })(angular);

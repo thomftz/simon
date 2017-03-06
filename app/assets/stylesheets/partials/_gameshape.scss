@@ -1,46 +1,44 @@
 .gameshapecontainer {
-    position: absolute;
-    left: 35%;
-    bottom: -25%;
-    top: 30%;
-
+    justify-content: center;
+    margin: 2% auto;
     .gameshape {
-        display: flex;
-        flex-flow: row wrap;
-        width: 450px;
-
-        .topleft {
-            padding: 1%;
-            margin: 1%;
-            background: #ed615c;
-            height: 200px;
-            width: 200px;
-            border-top-left-radius: 12rem;
-
-            .is-active {
-                background: #ff8d89;
-            }
+      display: flex;
+      flex-flow: row wrap;
+      width: 27rem;
+      height: 27rem;
+      align-content: center;
+      justify-content: center;
+      .topleft {
+        padding: 1%;
+        margin: 1%;
+        background: #ed615c;
+        height: 12rem;
+        width: 12rem;
+        border-top-left-radius: 12rem;
+        .is-active {
+          background: #ff8d89;
         }
+      }
 
-        .topright {
-            margin: 1%;
-            padding: 1%;
-            background: #5cf25c;
-            height: 200px;
-            width: 200px;
-            border-top-right-radius: 12rem;
+      .topright {
+        margin: 1%;
+        padding: 1%;
+        background: #5cf25c;
+        height: 12rem;
+        width: 12rem;
+        border-top-right-radius: 12rem;
 
-            .is-active {
-                background: #a7ff89;
-            }
+        .is-active {
+          background: #a7ff89;
         }
+      }
 
         .bottomleft {
             padding: 1%;
             margin: 1%;
             background: #5dc8ef;
-            height: 200px;
-            width: 200px;
+            height: 12rem;
+            width: 12rem;
             border-bottom-left-radius: 12rem;
 
             .is-active {
@@ -52,8 +50,8 @@
             margin: 1%;
             padding: 1%;
             background: #edc65c;
-            height: 200px;
-            width: 200px;
+            height: 12rem;
+            width: 12rem;
             border-bottom-right-radius: 12rem;
 
             .is-active {
@@ -69,34 +67,45 @@
 }
 
 .centershape {
-    position: relative;
-    z-index: 3;
-    top: -310px;
-    left: -20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 200px;
-    margin: auto;
-    border-radius: 10rem;
-    background: black;
-    position: relative;
-    border: 10px solid white;
-    font-size: 4rem;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 13rem;
+  width: 13rem;
+  bottom: 70%;
+  border-radius: 7rem;
+  background: black;
+  border: 10px solid white;
+  font-size: 4rem;
 
-    button {
-        border: none;
-        background: none;
-        outline: none;
-        color: white;
-        font-family: $primaryFont;
-        font-size: 3rem;
-        margin-right: 31%;
-        margin-bottom: 11%;
+    .start-game {
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      font-family: $primaryFont;
+      font-size: 2rem;
+      width: 45%;
 
         &:active {
-            font-size: 2rem;
+            font-size: 1.5rem;
+            margin-right: 0;
+        }
+    }
+    .reset-game {
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      font-family: $primaryFont;
+      font-size: 2rem;
+      width: 45%;
+
+        &:active {
+            font-size: 1.5rem;
             margin-right: 0;
         }
     }
@@ -110,4 +119,12 @@
         font-family: $primaryFont;
         padding: 5%;
     }
+}
+.round {
+  font-family: $primaryFont;
+  color: white;
+  font-size: 1.6rem;
+}
+.gameBtn-container {
+  justify-content: space-around;
 }
