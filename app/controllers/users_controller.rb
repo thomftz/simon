@@ -5,12 +5,28 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+
+    @user_name = {}
+
+    @users.each do |u|
+      @total_points = 0
+      u.scores.each do |s|
+        @total_points += s.points
+      end
+      @user_name[u.name] = @total_points
+    end
+
+    # @users[1].scores[1].points
+
+    render json: @user_name
+
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
     render json: [@user, @user.scores]
+
   end
 
   # GET /users/new

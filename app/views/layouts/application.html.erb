@@ -11,7 +11,7 @@
     <%= yield %>
     <script>
     var currentUser = <%= raw current_user.to_json %>
-    var loggedInUser = <%= raw User.find_by_id(session[:user_id]).to_json %>
+    var totalPoints = <%= raw @total_points.to_json %>
     </script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>

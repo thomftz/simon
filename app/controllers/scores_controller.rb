@@ -14,6 +14,7 @@ class ScoresController < ApplicationController
   # GET /scores/1
   # GET /scores/1.json
   def show
+
   end
 
   # GET /scores/new
