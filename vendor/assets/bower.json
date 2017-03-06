@@ -1,0 +1,10 @@
+{
+  "name": "dsl-generated-dependencies",
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "lodash": "latest",
+    "angular-ui-router": "latest",
+    "angular-local-storage": "latest"
+  }
+}
