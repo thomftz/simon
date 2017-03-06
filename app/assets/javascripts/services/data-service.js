@@ -19,6 +19,19 @@
       });
     }
 
+    function patchScore(points) {
+      return $http({
+        method: 'PATCH',
+        url: `/scores.json`,
+        data: {
+          scores: {
+            user_id: 27,
+            points: points
+          }
+        }
+      });
+    }
+
     function patchBio(text) {
       return $http({
         method: 'PATCH',
@@ -42,6 +55,7 @@
     return {
       get: getUsers,
       post: postScores,
+      patchScore: patchScore,
       delete: deleteStuff,
       patch: patchBio
     };
