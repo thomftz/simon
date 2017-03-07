@@ -5,8 +5,8 @@
     border: 5px solid black;
     border-radius: 1rem;
     box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, 0.4);
-    width: 70%;
-    margin: 3% auto;
+    width: 65%;
+    margin: 2% auto;
 
     .label {
         font-family: $headerFont;
@@ -84,7 +84,84 @@ button {
     box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.4);
 }
 
+.delete-user {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: 40px;
+    width: 150px;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+
+    img {
+        height: 20px;
+        width: 20px;
+    }
+
+    span {
+        font-size: 1rem;
+    }
+}
+
+.submit-bio {
+    background: black;
+    border-radius: 1rem;
+    border: none;
+    margin: 1% auto;
+    box-shadow: none;
+    font-family: $primaryFont;
+    font-size: 1.5rem;
+    color: white;
+}
+
 .bio-body {
+    font-family: $primaryFont;
+    font-size: 1rem;
+    width: 90%;
+    margin-left: 3%;
+
+    p {
+        border-top: 2px solid black;
+    }
+}
+
+.editbio-container {
+    display: flex;
+    justify-content: space-between;
+
+    .edit-bio {
+        line-height: 0.50rem;
+        background: none;
+        border: none;
+        box-shadow: none;
+        height: 30px;
+        width: 100px;
+        align-items: center;
+        line-height: 0.8rem;
+        outline: none;
+        cursor: pointer;
+        margin-top: 7%;
+
+        img {
+            height: 25px;
+            width: 25px;
+        }
+
+        span {
+            font-size: 1rem;
+        }
+    }
+}
+
+.infocontainer {
+    width: 40%;
+}
+
+.textlabel {
+    margin: 3%;
     font-family: $primaryFont;
     font-size: 1rem;
 }
