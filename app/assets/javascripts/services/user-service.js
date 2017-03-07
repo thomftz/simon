@@ -1,7 +1,7 @@
 (function(ng, currentUser) {
   ng.module('Simon').service('UserService', ['$q', '$state', 'DataService', function($q, $state, DataService) {
 
-    // this.users = [];
+    this.users = [];
 
     function getUsers(usersArr) {
       // console.log(usersArr);
@@ -43,9 +43,9 @@
     btn.addEventListener('click', function() {});
 
     $q.when(DataService.get("/users.json")).then((response) => {
-      let userArr = response.data;
-      // getTotalScore(userArr);
-      // console.log(response);
+      let usersArr = response.data;
+      getUsers(usersArr);
+      console.log(response.data);
     }).catch((error) => {
       console.log(error);
     });
