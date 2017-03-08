@@ -1,11 +1,7 @@
 (function(ng, currentUser) {
 
   ng.module('Simon').controller('ProfileController', ['$scope', '$q', 'DataService', function($scope, $q, DataService) {
-    // console.log('profile');
-
-    $scope.bio = null;
     $scope.userName = currentUser;
-    $scope.signedIn = false;
 
     if (currentUser) {
       $scope.signedIn = true;
@@ -21,7 +17,6 @@
       console.log(error);
     });
 
-
     $scope.patchBioText = function(text) {
       $q.when(DataService.patch(text)).then((response) => {
         $scope.bio = response.data.about;
@@ -36,14 +31,54 @@
 
     $scope.deleteUser = function() {
       location.reload();
-      $q.when(DataService.delete()).then((response) => {
-        // console.log(response);
-      }).catch((error) => {
+      $q.when(DataService.delete()).then((response) => {}).catch((error) => {
         console.log(error);
       });
     };
 
+    $scope.rankSet = function(obj) {
+      if (obj.score >= 500 && obj.score < 1000) {
+        obj.rank = 'snowcone';
+
+      } else if (obj.score >= 1000 && obj.score < 2000) {
+        obj.rank = 'popcorn';
+
+      } else if (obj.score >= 2000 && obj.score < 3000) {
+        obj.rank = 'liquidsnake';
+
+      } else if (obj.score >= 3000 && obj.score < 4000) {
+        obj.rank = 'revolver ocelot';
+
+      } else if (obj.score >= 4000 && obj.score < 5000) {
+        obj.rank = "probably dan's rank";
+
+      } else if (obj.score >= 5000 && obj.score < 6000) {
+        obj.rank = "thunderslice";
+
+      } else if (obj.score >= 6000 && obj.score < 7000) {
+        obj.rank = "carter status";
+      }
+      $scope.rank = obj.rank;
+      $scope.points = obj.score;
+    };
+
+
+    $q.when(DataService.get("/users.json")).then((response) => {
+      let users = response.data;
+      let arr = [];
+      for (var prop in users) {
+        let tempObj = {
+          name: prop,
+          score: users[prop],
+          rank: 'acorn'
+        };
+        if (tempObj.name === currentUser.name) {
+          $scope.rankSet(tempObj);
+        }
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
+
   }]);
-
-
 })(angular, window.currentUser);

@@ -3,17 +3,14 @@
 
     <th>User</th>
     <th>Score</th>
-    <th>On</th>
     <th>Rank</th>
 
   </tr>
   <tbody ng-controller="LeaderboardController as leadCtrl">
     <tr class='item-list' ng-repeat="users in users | orderBy: users.name">
 
-
       <td>{{users.name}}</td>
       <td>{{users.score}}</td>
-      <td>{{users.updated_at | date: "M.dd.yyyy"}} - {{users.updated_at | date: "h.mm.a"}}</td>
       <td>{{users.rank}}</td>
     </tr>
   </tbody>

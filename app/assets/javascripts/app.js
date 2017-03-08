@@ -8,7 +8,6 @@
       template: '<ui-view></ui-view>'
     }).state('ParentState.profile', {
       url: '',
-      // controller: 'ProfileController as profileCtrl',
       templateUrl: 'profile.html'
     }).state('ParentState.game', {
       url: 'game',
@@ -16,7 +15,6 @@
       templateUrl: 'game.html'
     }).state('ParentState.leaderboard', {
       url: 'leaderboard',
-      // controller: 'GameController as gameCtrl',
       templateUrl: 'leaderboard.html'
     });
   }]);

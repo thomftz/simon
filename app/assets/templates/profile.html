@@ -1,32 +1,32 @@
 <div class="is-flex user-profile" ng-show="signedIn">
-    <div class="usercontainer">
-        <div class="is-flex userinfocontainer">
-            <img class="user-image" src="{{userName.image}}" />
-            <span class="user-name">{{userName.name}}</span>
-            <button class="delete-user" type="submit" ng-click="deleteUser()"><img ng-src="https://d30y9cdsu7xlg0.cloudfront.net/png/3058-200.png"/><span>delete user</span></button>
-        </div>
+  <div class="usercontainer">
+    <div class="is-flex userinfocontainer">
+      <img class="user-image" src="{{userName.image}}" />
+      <span class="user-name">{{userName.name}}</span>
+      <button class="delete-user" type="submit" ng-click="deleteUser()"><img ng-src="https://d30y9cdsu7xlg0.cloudfront.net/png/3058-200.png"/><span>delete user</span></button>
     </div>
-    <div class="infocontainer">
-        <div class="is-flex about-container">
-            <div class="rank-container">
-                <span class="label">rank<span>
+  </div>
+  <div class="infocontainer">
+    <div class="is-flex about-container">
+      <div class="rank-container">
+        <span class="label">rank<span>
         </div>
-          <span class="rank">liquidsnake</span>
-                <div class="score-container">
-                    <span class="label">total points </span>
-                    <span class="score">2,010pts</span>
-                </div>
-                <form ng-hide="bio" class="textarea-container" ng-submit="patchBioText(text)">
-                    <label class="textlabel"> tell us about yourself
+          <span class="rank">{{rank}}</span>
+        <div class="score-container">
+          <span class="label">total points </span>
+          <span class="score">{{points}}pts</span>
+        </div>
+        <form ng-hide="bio" class="textarea-container" ng-submit="patchBioText(text)">
+          <label class="textlabel"> tell us about yourself
           <textarea ng-model="text" maxlength='100'></textarea>
         </label>
-                    <button class="submit-bio" type="submit">submit</button>
-                </form>
-            </div>
-            <div ng-show="bio" class="bio-body">
-                <div class="editbio-container">
-                    <div class="label">bio </div> <button class="edit-bio" type="submit" ng-click="toggleTextarea()"><span>edit bio</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button>
-                </div>
-                <p>{{bio}}</p>
-            </div>
+          <button class="submit-bio" type="submit">submit</button>
+        </form>
+      </div>
+      <div ng-show="bio" class="bio-body">
+        <div class="editbio-container">
+          <div class="label">bio </div> <button class="edit-bio" type="submit" ng-click="toggleTextarea()"><span>edit bio</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button>
         </div>
+        <p>{{bio}}</p>
+      </div>
+    </div>
