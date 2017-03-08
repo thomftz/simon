@@ -7,7 +7,7 @@
 
   </tr>
   <tbody ng-controller="LeaderboardController as leadCtrl">
-    <tr class='item-list' ng-repeat="users in users | orderBy: users.name">
+    <tr class='item-list' ng-repeat="users in users | orderBy: users.score">
 
       <td>{{users.name}}</td>
       <td>{{users.score}}</td>

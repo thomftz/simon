@@ -1,15 +1,18 @@
 // (function(ng, currentUser) {
 //   ng.module('Simon').service('UserService', ['$q', '$state', 'DataService', function($q, $state, DataService) {
-//     let shitArr;
+//     let shitArr = [];
 //
 //     function getArr(arr) {
 //       console.log('innny');
 //       console.log(arr);
-//       return arr;
+//       shitArr = arr;
+//       return shitArr;
 //     }
 //
-//     this.users = [];
-//     this.rankSet = function(array) {
+//     // this.users = [];
+//
+//     function rankSet(array) {
+//       console.log(array);
 //       for (var i = 0; i < array.length; i++) {
 //         if (array[i].score >= 500 && array[i].score < 1000) {
 //           this.users[i].rank = 'snowcone';
@@ -33,11 +36,11 @@
 //           this.users[i].rank = "carter status";
 //         }
 //         shitArr = array;
-//
+//         getArr(array);
 //         console.log(shitArr);
 //         break;
 //       }
-//     };
+//     }
 //
 //     $q.when(DataService.get("/users.json")).then((response) => {
 //       console.log(response.data);
@@ -49,12 +52,12 @@
 //           score: users[prop],
 //           rank: 'acorn'
 //         };
-//         // console.log(tempObj);
+//         console.log(tempObj);
 //         arr.push(tempObj);
 //       }
-//       this.users = arr;
-//       this.rankSet(arr);
-//       // console.log(this.users);
+//       users = arr;
+//       rankSet(users);
+//       // console.log(users);
 //       // console.log(arr);
 //     }).catch((error) => {
 //       console.log(error);

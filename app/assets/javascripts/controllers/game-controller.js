@@ -71,7 +71,6 @@
     };
 
     $scope.startGame = () => {
-      console.log('start game');
       $scope.$apply(function() {
         $scope.status = 'go!';
       });
@@ -79,7 +78,6 @@
 
     $scope.bindEvents = function() {
       $('.slice').on('click', function() {
-        console.log($(this).data('id'));
         let number = $(this).data('id');
         $(`.audio${number}`).get(0).play();
         userArr.push($(this).data('id'));
@@ -126,7 +124,6 @@
         $scope.next = 'try again';
 
       });
-      console.log('you lost');
     };
 
     $scope.youWin = function() {
@@ -139,9 +136,6 @@
       });
       let score = $scope.score;
       postScore(score);
-      // $scope.postScore(score);
-      console.log(score);
-      console.log('you win');
     };
 
     $scope.resetRound = function() {
@@ -149,18 +143,13 @@
       patternArray = [];
       userArr = [];
       $scope.betweenRounds = false;
-      console.log('reset');
     };
 
     function postScore(points) {
-
-      // $scope.postScore = function(points) {
-      console.log(points);
       $q.when(DataService.post(points)).then((response) => {
-        // $scope.score = response.data.about;
-        console.log(response.data);
+        // console.log(response.data);
       }).catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
     }
 
