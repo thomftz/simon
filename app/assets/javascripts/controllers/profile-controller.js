@@ -57,6 +57,8 @@
 
       } else if (obj.score >= 6000 && obj.score < 7000) {
         obj.rank = "carter status";
+      } else if (array[i].score >= 7000 && array[i].score < 8000) {
+        $scope.users[i].rank = "Val cheated";
       }
       $scope.rank = obj.rank;
       $scope.points = obj.score;
