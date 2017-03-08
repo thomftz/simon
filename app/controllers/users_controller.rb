@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-
+    
     @user_name = {}
 
     @users.each do |u|
@@ -20,6 +20,9 @@ class UsersController < ApplicationController
 
     render json: @user_name
 
+    # @leaderboard = RubySerializer.as_json @users, include: :scores
+    #
+    # render json: @leaderboard
   end
 
   # GET /users/1
