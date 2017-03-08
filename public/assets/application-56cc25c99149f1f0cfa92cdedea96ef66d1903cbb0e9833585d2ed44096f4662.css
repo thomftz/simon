@@ -1,0 +1,658 @@
+@import url("https://fonts.googleapis.com/css?family=Monofett|Sirin+Stencil");
+/* line 1, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 90, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+body {
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  font: 16px/1.25 'Monofett', cursive;
+}
+
+/* line 97, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 102, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* line 107, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+
+/* line 115, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 120, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+}
+
+/* line 126, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* line 132, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+::-moz-selection {
+  color: #fff;
+  background: #2c3e50;
+}
+
+/* line 137, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_reset.scss */
+::selection {
+  color: #fff;
+  background: #2c3e50;
+}
+
+/* line 1, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1%;
+  border-top: 8px solid black;
+  border-bottom: 8px solid black;
+}
+/* line 11, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.navbar header {
+  font-family: "Monofett", cursive;
+  font-size: 4rem;
+}
+/* line 15, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.navbar header:hover {
+  cursor: pointer;
+}
+/* line 20, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.navbar ul {
+  font-family: "Sirin Stencil", cursive;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 40%;
+  font-size: 2.5rem;
+}
+/* line 28, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.navbar ul li {
+  align-content: center;
+  border-radius: 1rem;
+  padding: 3%;
+}
+/* line 34, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.navbar ul li:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* line 42, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.fat-header {
+  text-align: center;
+  font-size: 9rem;
+}
+
+/* line 47, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.g-active {
+  background: #ed615c;
+  color: white;
+}
+
+/* line 52, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.h-active {
+  background: #5dc8ef;
+  color: white;
+}
+
+/* line 57, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.l-active {
+  background: #edc65c;
+  color: white;
+}
+
+/* line 63, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.game:hover {
+  background: #ed615c;
+}
+
+/* line 69, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.home:hover {
+  background: #5dc8ef;
+}
+
+/* line 75, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.leaderboard:hover {
+  background: #edc65c;
+}
+
+/* line 80, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.profile-user-left {
+  width: 7rem;
+  font-family: "Sirin Stencil", cursive;
+  padding: 0.5%;
+}
+
+/* line 86, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_nav.scss */
+.is-hidden {
+  display: none;
+}
+
+/* line 1, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_signin.scss */
+.main-form-container {
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin: 10px auto;
+  width: 300px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.4);
+}
+/* line 12, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_signin.scss */
+.main-form-container img {
+  width: 60%;
+  text-align: center;
+  margin: 5px;
+}
+/* line 17, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_signin.scss */
+.main-form-container a {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+/* line 22, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_signin.scss */
+.main-form-container h1 {
+  font-family: 'Monofett', cursive;
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+}
+/* line 29, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_signin.scss */
+.main-form-container strong {
+  font-family: 'Sirin Stencil', cursive;
+  font-size: 2rem;
+}
+
+/* line 35, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_signin.scss */
+.is-flex {
+  display: flex;
+}
+
+/* line 1, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer {
+  justify-content: center;
+  margin: 2% auto;
+}
+/* line 4, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape {
+  display: flex;
+  flex-flow: row wrap;
+  width: 27rem;
+  height: 27rem;
+  align-content: center;
+  justify-content: center;
+}
+/* line 11, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .topleft {
+  padding: 1%;
+  margin: 1%;
+  background: #ed615c;
+  height: 12rem;
+  width: 12rem;
+  border-top-left-radius: 12rem;
+}
+/* line 18, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .topleft .is-active {
+  background: #ff8d89;
+}
+/* line 23, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .topright {
+  margin: 1%;
+  padding: 1%;
+  background: #5cf25c;
+  height: 12rem;
+  width: 12rem;
+  border-top-right-radius: 12rem;
+}
+/* line 31, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .topright .is-active {
+  background: #a7ff89;
+}
+/* line 36, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .bottomleft {
+  padding: 1%;
+  margin: 1%;
+  background: #5dc8ef;
+  height: 12rem;
+  width: 12rem;
+  border-bottom-left-radius: 12rem;
+}
+/* line 44, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .bottomleft .is-active {
+  background: #89dfff;
+}
+/* line 49, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .bottomright {
+  margin: 1%;
+  padding: 1%;
+  background: #edc65c;
+  height: 12rem;
+  width: 12rem;
+  border-bottom-right-radius: 12rem;
+}
+/* line 57, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameshapecontainer .gameshape .bottomright .is-active {
+  background: #ffe093;
+}
+
+/* line 64, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.select {
+  border: 8px solid white;
+  background: rgba(255, 187, 151, 0.7) !important;
+}
+
+/* line 69, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.centershape {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 13rem;
+  width: 13rem;
+  bottom: 70%;
+  border-radius: 7rem;
+  background: black;
+  border: 10px solid white;
+  font-size: 4rem;
+}
+/* line 84, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.centershape .start-game {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Sirin Stencil", cursive;
+  font-size: 2rem;
+  width: 45%;
+}
+/* line 93, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.centershape .start-game:active {
+  font-size: 1.5rem;
+  margin-right: 0;
+}
+/* line 98, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.centershape .reset-game {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Sirin Stencil", cursive;
+  font-size: 2rem;
+  width: 45%;
+}
+/* line 107, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.centershape .reset-game:active {
+  font-size: 1.5rem;
+  margin-right: 0;
+}
+/* line 113, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.centershape .center-display {
+  color: white;
+  margin-bottom: 2%;
+  font-size: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: "Sirin Stencil", cursive;
+  padding: 5%;
+}
+
+/* line 123, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.round {
+  font-family: "Sirin Stencil", cursive;
+  color: white;
+  font-size: 1.6rem;
+}
+
+/* line 128, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_gameshape.scss */
+.gameBtn-container {
+  justify-content: space-around;
+}
+
+/* line 1, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_leaderboard.scss */
+table {
+  margin: 3% auto;
+  width: 70%;
+  font-family: "Sirin Stencil", cursive;
+}
+/* line 6, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_leaderboard.scss */
+table th {
+  padding: 3%;
+  background: black;
+  color: white;
+  font-size: 1.5rem;
+  border: 2px solid white;
+  border-bottom: none;
+  font-size: 2.5rem;
+}
+/* line 16, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_leaderboard.scss */
+table tr {
+  margin: 1% auto;
+}
+/* line 19, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_leaderboard.scss */
+table tr td {
+  margin: 1% auto;
+  padding: 1%;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  font-size: 1.5rem;
+  text-align: center;
+}
+/* line 28, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_leaderboard.scss */
+table tr td:last-child {
+  border-right: none;
+}
+
+/* line 1, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 5px solid black;
+  border-radius: 1rem;
+  box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, 0.4);
+  width: 65%;
+  margin: 2% auto;
+}
+/* line 11, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.user-profile .label {
+  font-family: "Monofett", cursive;
+  font-size: 3rem;
+}
+/* line 16, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.user-profile .usercontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2%;
+}
+/* line 23, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.user-profile .usercontainer .user-name {
+  font-family: "Sirin Stencil", cursive;
+  font-size: 3rem;
+}
+/* line 29, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.user-profile .about-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 3% 3%;
+}
+
+/* line 36, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.userinfocontainer {
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* line 41, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.user-image {
+  width: 15rem;
+  height: 15rem;
+}
+
+/* line 46, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.rank {
+  font-family: "Sirin Stencil", cursive;
+  font-size: 2rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  line-height: 1rem;
+  border-radius: 1rem;
+}
+
+/* line 55, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+p {
+  font-family: "Sirin Stencil", cursive;
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+/* line 61, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.score {
+  font-family: "Sirin Stencil", cursive;
+  font-size: 2rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  line-height: 1rem;
+  border-radius: 1rem;
+}
+
+/* line 70, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.textarea-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+/* line 77, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+textarea {
+  width: 80%;
+  height: 7rem;
+}
+
+/* line 82, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+button {
+  width: 30%;
+  box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* line 87, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.delete-user {
+  display: flex;
+  flex-direction: row;
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 40px;
+  width: 150px;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+}
+/* line 99, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.delete-user img {
+  height: 20px;
+  width: 20px;
+}
+/* line 104, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.delete-user span {
+  font-size: 1rem;
+}
+
+/* line 109, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.submit-bio {
+  background: black;
+  border-radius: 1rem;
+  border: none;
+  margin: 1% auto;
+  box-shadow: none;
+  font-family: "Sirin Stencil", cursive;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* line 120, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.bio-body {
+  font-family: "Sirin Stencil", cursive;
+  font-size: 1rem;
+  width: 90%;
+  margin-left: 3%;
+}
+/* line 126, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.bio-body p {
+  border-top: 2px solid black;
+}
+
+/* line 131, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.editbio-container {
+  display: flex;
+  justify-content: space-between;
+}
+/* line 135, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.editbio-container .edit-bio {
+  line-height: 0.50rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 30px;
+  width: 100px;
+  align-items: center;
+  line-height: 0.8rem;
+  outline: none;
+  cursor: pointer;
+  margin-top: 7%;
+}
+/* line 148, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.editbio-container .edit-bio img {
+  height: 25px;
+  width: 25px;
+}
+/* line 153, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.editbio-container .edit-bio span {
+  font-size: 1rem;
+}
+
+/* line 159, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.infocontainer {
+  width: 40%;
+}
+
+/* line 163, /Users/thomas/IronYard/simon/app/assets/stylesheets/partials/_userprofile.scss */
+.textlabel {
+  margin: 3%;
+  font-family: "Sirin Stencil", cursive;
+  font-size: 1rem;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+

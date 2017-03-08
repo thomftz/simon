@@ -1,24 +1,25 @@
-# README
+# Simon Said What?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Play the game on [Heroku](https://github.com/thomftz/simon)
 
-Things you may want to cover:
 
-* Ruby version
+# Description
+A remake of the classic Simon Says game.
 
-* System dependencies
+# Requirements
 
-* Configuration
+* Ruby '2.4.0'
+* Rails 5.0
+* Puma
+* ActiveRecord
+* Postgres SQL
+* Angular JS
+* JQuery
 
-* Database creation
+---
+**for testing:**
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Contributors
+* Carter McGee
+* Katherine Hill
+* Thomas Fitzpatrick 
