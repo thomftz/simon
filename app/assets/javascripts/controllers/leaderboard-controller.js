@@ -25,7 +25,6 @@
         } else if (array[i].score >= 6000 && array[i].score < 7000) {
           $scope.users[i].rank = "carter status";
         }
-        // break;
       }
     };
 
