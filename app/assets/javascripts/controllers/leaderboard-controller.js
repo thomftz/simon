@@ -1,6 +1,9 @@
 (function(ng) {
   ng.module('Simon').controller('LeaderboardController', ['$q', '$state', '$scope', 'DataService', 'UserService', function($q, $state, $scope, DataService, UserService) {
-    // $scope.users = UserService.getUsers();
-    // console.log($scope.users);
+    $('.testbtn').on('click', function() {
+      let newArr = UserService.getArr();
+      console.log(newArr);
+    });
+
   }]);
 })(angular);

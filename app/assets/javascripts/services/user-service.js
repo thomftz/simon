@@ -1,58 +1,63 @@
 (function(ng, currentUser) {
   ng.module('Simon').service('UserService', ['$q', '$state', 'DataService', function($q, $state, DataService) {
-
-    // this.users = [];
-
-    function getUsers(usersArr) {
-      // console.log(usersArr);
-      return usersArr;
+    function getArr(arr) {
+      console.log('innny');
+      return arr;
     }
 
-    function getTotalScore(userArr) {
-      let pointsArr = [];
-      console.log(`pointsArr ${pointsArr}`);
-      for (let i = 0; i < userArr.length; i++) {
-        let score = userArr[i].scores;
-        console.log(`userArr[i] ${userArr[i]}`);
-        for (let j = 0; j < score.length; j++) {
-          console.log(`score[j].points ${score[j].points}`);
-          pointsArr.push(score[j].points);
+
+
+
+    this.users = [];
+    this.rankSet = function(array) {
+      for (var i = 0; i < array.length; i++) {
+        if (array[i].score >= 500 && array[i].score < 1000) {
+          this.users[i].rank = 'snowcone';
+
+        } else if (array[i].score >= 1000 && array[i].score < 2000) {
+          this.users[i].rank = 'popcorn';
+
+        } else if (array[i].score >= 2000 && array[i].score < 3000) {
+          this.users[i].rank = 'liquidsnake';
+
+        } else if (array[i].score >= 3000 && array[i].score < 4000) {
+          this.users[i].rank = 'revolver ocelot';
+
+        } else if (array[i].score >= 4000 && array[i].score < 5000) {
+          this.users[i].rank = "probably dan's rank";
+
+        } else if (array[i].score >= 5000 && array[i].score < 6000) {
+          this.users[i].rank = "thunderslice";
+
+        } else if (array[i].score >= 6000 && array[i].score < 7000) {
+          this.users[i].rank = "carter status";
         }
+        getArr(array);
       }
-      let totalPoints = pointsArr.reduce((a, b) => a + b, 0);
-      getUsers(totalPoints);
-      console.log(totalPoints);
-    }
-    // function getTotalScore(userArr) {
-    //   let pointsArr = [];
-    //   console.log(`pointsArr ${pointsArr}`);
-    //   for (let i = 0; i < userArr.length; i++) {
-    //     let score = userArr[i].scores;
-    //     console.log(`userArr[i] ${userArr[i]}`);
-    //     for (let j = 0; j < score.length; j++) {
-    //       console.log(`score[j].points ${score[j].points}`);
-    //       pointsArr.push(score[j].points);
-    //     }
-    //   }
-    //   let totalPoints = pointsArr.reduce((a, b) => a + b, 0);
-    //   getUsers(totalPoints);
-    //   console.log(totalPoints);
-    // }
-
-    let btn = document.querySelector('.testbtn');
-    btn.addEventListener('click', function() {});
+    };
 
     $q.when(DataService.get("/users.json")).then((response) => {
-      let userArr = response.data;
-      // getTotalScore(userArr);
-      // console.log(response);
+      console.log(response.data);
+      let users = response.data;
+      let arr = [];
+      for (var prop in users) {
+        let tempObj = {
+          name: prop,
+          score: users[prop],
+          rank: 'acorn'
+        };
+        console.log(tempObj);
+        arr.push(tempObj);
+      }
+      this.users = arr;
+      this.rankSet(arr);
+      console.log(this.users);
+      // console.log(arr);
     }).catch((error) => {
       console.log(error);
     });
-
     return {
-      getUsers: getUsers
+      getArr: getArr
     };
-
   }]);
-})(angular, window.currentUser);
+})(angular);
