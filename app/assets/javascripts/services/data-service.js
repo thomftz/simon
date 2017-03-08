@@ -10,9 +10,10 @@
     function postScores(points) {
       return $http({
         method: 'POST',
-        url: `/scores/${currentUser.id}.json`,
+        url: `/scores.json`,
         data: {
-          scores: {
+          score: {
+            user_id: currentUser.id,
             points: points
           }
         }

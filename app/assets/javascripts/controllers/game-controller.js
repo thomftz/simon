@@ -138,8 +138,9 @@
         $scope.score += 25;
       });
       let score = $scope.score;
-      $scope.postScore(score);
-      console.log($scope.score);
+      postScore(score);
+      // $scope.postScore(score);
+      console.log(score);
       console.log('you win');
     };
 
@@ -151,8 +152,9 @@
       console.log('reset');
     };
 
+    function postScore(points) {
 
-    $scope.postScore = function(points) {
+      // $scope.postScore = function(points) {
       console.log(points);
       $q.when(DataService.post(points)).then((response) => {
         // $scope.score = response.data.about;
@@ -160,7 +162,7 @@
       }).catch((error) => {
         console.log(error);
       });
-    };
+    }
 
   }]);
 })(angular);
