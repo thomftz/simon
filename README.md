@@ -1,6 +1,6 @@
 # Simon Said What?
 
-> Play the game on [Heroku](https://github.com/thomftz/simon)
+> Play the game on [Heroku](https://simonsaidwhat.herokuapp.com)
 
 
 # Description
@@ -22,4 +22,4 @@ A remake of the classic Simon Says game.
 # Contributors
 * Carter McGee
 * Katherine Hill
-* Thomas Fitzpatrick 
+* Thomas Fitzpatrick
