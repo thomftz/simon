@@ -1,11 +1,11 @@
 (function(ng) {
-  ng.module('Simon').controller('GameController', ['$scope', '$q', function($scope, $q) {
+  ng.module('Simon').controller('GameController', ['$scope', '$q', 'DataService', function($scope, $q, DataService) {
 
     let patternArray = [];
     let userArr = [];
     let num = 0;
-    let points = 0;
-    let score = 0;
+
+    $scope.score = 0;
     $scope.status = '';
     $scope.round = 1;
     $scope.betweenRounds = false;
@@ -80,8 +80,8 @@
     $scope.bindEvents = function() {
       $('.slice').on('click', function() {
         console.log($(this).data('id'));
-        let num = $(this).data('id');
-        $(`.audio${num}`).get(0).play();
+        let number = $(this).data('id');
+        $(`.audio${number}`).get(0).play();
         userArr.push($(this).data('id'));
         $scope.checkPattern();
       });
@@ -135,7 +135,11 @@
         $scope.lose = 'nice job!';
         $scope.betweenRounds = true;
         $scope.next = 'next';
+        $scope.score += 25;
       });
+      let score = $scope.score;
+      $scope.postScore(score);
+      console.log($scope.score);
       console.log('you win');
     };
 
@@ -145,6 +149,17 @@
       userArr = [];
       $scope.betweenRounds = false;
       console.log('reset');
+    };
+
+
+    $scope.postScore = function(points) {
+      console.log(points);
+      $q.when(DataService.post(points)).then((response) => {
+        // $scope.score = response.data.about;
+        console.log(response.data);
+      }).catch((error) => {
+        console.log(error);
+      });
     };
 
   }]);
