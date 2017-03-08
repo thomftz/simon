@@ -1,13 +1,16 @@
 (function(ng) {
-  ng.module('Simon').controller('LeaderboardController', ['$q', '$state', '$scope', 'DataService', function($q, $state, $scope, DataService) {
-    // $scope.users = [];
-    // $scope.shit = function() {
-    //   $scope.users = UserService.getArr();
-    //   console.log($scope.users);
-    // };
+  ng.module('Simon').controller('LeaderboardController', ['$q', '$state', '$scope', 'DataService', 'UserService', function($q, $state, $scope, DataService, UserService) {
+    // // $scope.users = [];
+    // $scope.shit = function(arr) {
+    //   console.log(arr);
+    //   // $scope.users = UserService.getArr();
+    //   // return $scope.users;
     //
-    // $scope.shit();
+    // };
 
+    // $scope.shit();
+    $scope.sortType = "score";
+    $scope.sortReverse = true;
     $scope.users = [];
     $scope.rankSet = function(array) {
       for (var i = 0; i < array.length; i++) {
@@ -54,5 +57,7 @@
     }).catch((error) => {
       console.log(error);
     });
+
   }]);
+
 })(angular);

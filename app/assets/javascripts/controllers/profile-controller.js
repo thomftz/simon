@@ -1,6 +1,6 @@
 (function(ng, currentUser) {
 
-  ng.module('Simon').controller('ProfileController', ['$scope', '$q', 'DataService', function($scope, $q, DataService) {
+  ng.module('Simon').controller('ProfileController', ['$scope', '$q', 'DataService', 'UserService', function($scope, $q, DataService, UserService) {
     $scope.userName = currentUser;
 
     if (currentUser) {
@@ -57,8 +57,9 @@
 
       } else if (obj.score >= 6000 && obj.score < 7000) {
         obj.rank = "carter status";
-      } else if (array[i].score >= 7000 && array[i].score < 8000) {
-        $scope.users[i].rank = "Val cheated";
+
+      } else if (obj.score >= 7000 && obj.score < 8000) {
+        obj.rank = "Val cheated";
       }
       $scope.rank = obj.rank;
       $scope.points = obj.score;
