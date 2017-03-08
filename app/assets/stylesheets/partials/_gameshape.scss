@@ -1,113 +1,113 @@
-.gameshapecontainer {
-    position: absolute;
-    left: 35%;
-    bottom: -25%;
-    top: 30%;
-
-    .gameshape {
-        display: flex;
-        flex-flow: row wrap;
-        width: 450px;
-
-        .topleft {
-            padding: 1%;
-            margin: 1%;
-            background: #ed615c;
-            height: 200px;
-            width: 200px;
-            border-top-left-radius: 12rem;
-
-            .is-active {
-                background: #ff8d89;
-            }
-        }
-
-        .topright {
-            margin: 1%;
-            padding: 1%;
-            background: #5cf25c;
-            height: 200px;
-            width: 200px;
-            border-top-right-radius: 12rem;
-
-            .is-active {
-                background: #a7ff89;
-            }
-        }
-
-        .bottomleft {
-            padding: 1%;
-            margin: 1%;
-            background: #5dc8ef;
-            height: 200px;
-            width: 200px;
-            border-bottom-left-radius: 12rem;
-
-            .is-active {
-                background: #89dfff;
-            }
-        }
-
-        .bottomright {
-            margin: 1%;
-            padding: 1%;
-            background: #edc65c;
-            height: 200px;
-            width: 200px;
-            border-bottom-right-radius: 12rem;
-
-            .is-active {
-                background: #ffe093;
-            }
-        }
-    }
-}
-
-.select {
-    border: 8px solid white;
-    background: rgba(255, 187, 151, .7) !important;
-}
-
-.centershape {
-    position: relative;
-    z-index: 3;
-    top: -310px;
-    left: -20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 200px;
-    margin: auto;
-    border-radius: 10rem;
-    background: black;
-    position: relative;
-    border: 10px solid white;
-    font-size: 4rem;
-
-    button {
-        border: none;
-        background: none;
-        outline: none;
-        color: white;
-        font-family: $primaryFont;
-        font-size: 3rem;
-        margin-right: 31%;
-        margin-bottom: 11%;
-
-        &:active {
-            font-size: 2rem;
-            margin-right: 0;
-        }
-    }
-
-    .center-display {
-        color: white;
-        margin-bottom: 2%;
-        font-size: 50%;
-        width: 100%;
-        text-align: center;
-        font-family: $primaryFont;
-        padding: 5%;
-    }
-}
+// .gameshapecontainer {
+//     position: absolute;
+//     left: 35%;
+//     bottom: -25%;
+//     top: 30%;
+//
+//     .gameshape {
+//         display: flex;
+//         flex-flow: row wrap;
+//         width: 450px;
+//
+//         .topleft {
+//             padding: 1%;
+//             margin: 1%;
+//             background: #ed615c;
+//             height: 200px;
+//             width: 200px;
+//             border-top-left-radius: 12rem;
+//
+//             .is-active {
+//                 background: #ff8d89;
+//             }
+//         }
+//
+//         .topright {
+//             margin: 1%;
+//             padding: 1%;
+//             background: #5cf25c;
+//             height: 200px;
+//             width: 200px;
+//             border-top-right-radius: 12rem;
+//
+//             .is-active {
+//                 background: #a7ff89;
+//             }
+//         }
+//
+//         .bottomleft {
+//             padding: 1%;
+//             margin: 1%;
+//             background: #5dc8ef;
+//             height: 200px;
+//             width: 200px;
+//             border-bottom-left-radius: 12rem;
+//
+//             .is-active {
+//                 background: #89dfff;
+//             }
+//         }
+//
+//         .bottomright {
+//             margin: 1%;
+//             padding: 1%;
+//             background: #edc65c;
+//             height: 200px;
+//             width: 200px;
+//             border-bottom-right-radius: 12rem;
+//
+//             .is-active {
+//                 background: #ffe093;
+//             }
+//         }
+//     }
+// }
+//
+// .select {
+//     border: 8px solid white;
+//     background: rgba(255, 187, 151, .7) !important;
+// }
+//
+// .centershape {
+//     position: relative;
+//     z-index: 3;
+//     top: -310px;
+//     left: -20px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 200px;
+//     width: 200px;
+//     margin: auto;
+//     border-radius: 10rem;
+//     background: black;
+//     position: relative;
+//     border: 10px solid white;
+//     font-size: 4rem;
+//
+//     button {
+//         border: none;
+//         background: none;
+//         outline: none;
+//         color: white;
+//         font-family: $primaryFont;
+//         font-size: 3rem;
+//         margin-right: 31%;
+//         margin-bottom: 11%;
+//
+//         &:active {
+//             font-size: 2rem;
+//             margin-right: 0;
+//         }
+//     }
+//
+//     .center-display {
+//         color: white;
+//         margin-bottom: 2%;
+//         font-size: 50%;
+//         width: 100%;
+//         text-align: center;
+//         font-family: $primaryFont;
+//         padding: 5%;
+//     }
+// }
