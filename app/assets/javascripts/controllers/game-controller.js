@@ -1,114 +1,151 @@
-// (function(ng) {
-//     ng.module('Simon').controller('GameController', ['$scope', '$q', function($scope, $q) {
-//
-//         let green = $('.topright').data('id');
-//         let red = $('.topleft').data('id');
-//         let blue = $('.bottomleft').data('id');
-//         let yellow = $('.bottomright').data('id');
-//         // let timer = 20;
-//         // let timerEnd = 0;
-//         let turnDisplay = document.querySelector('.centershape');
-//         let centerDisplay = document.createElement('span');
-//         let start = document.querySelector('.start-game');
-//         let patternArray = [];
-//         let userArr = [];
-//         let arrayMatch = false;
-//         let num = 0;
-//         let points = 0;
-//         let score = 0;
-//         let doodoo = 'katie';
-//         let slices = 1;
-//
-//         start.onclick = function() {
-//             $scope.gamePattern();
-//         };
-//
-//         $('.slice').on('mousedown mouseup', function() {
-//             $(this).toggleClass('select');
-//         });
-//
-//         $('.slice').on('click', function() {
-//             console.log($(this).data('id'));
-//             userArr.push($(this).data('id'));
-//             for (var i = 0; i < userArr.length; i++) {
-//                 if (patternArray === userArr) {
-//                     arrayMatch = true;
-//                     return arrayMatch;
-//                 }
-//             }
-//             console.log('arraymatch', arrayMatch);
-//             $scope.checkPattern(arrayMatch);
-//         });
-//
-//         $scope.checkPattern = function() {
-//             for (let i = 0; i < patternArray.length; i++) {
-//                 if (arrayMatch) {
-//                     $('.center-display').html(`round ${slices - 1}`);
-//                     console.log('win round');
-//                     $scope.gamePattern();
-//                 } else {
-//                     console.log('lost', patternArray, userArr);
-//                     $('.center-display').html(`you lose ${currentUser.name}, lol`);
-//                 }
-//             }
-//
-//             // if (patternArray === userArr) {
-//             //     console.log('you should win', patternArray, userArr);
-//             //     $('.center-display').html(`you win ${currentUser.name}, you asshole`);
-//             // } else {
-//             //   console.log('aaaaaah');
-//             //     $('.center-display').html(`you lose ${currentUser.name}, lol`);
-//             //
-//             // }
-//
-//
-//
-//         };
-//         $scope.gamePattern = function() {
-//             while (patternArray.length < slices) {
-//                 let rand = Math.floor(Math.random() * 4);
-//                 console.log('slices', slices);
-//                 patternArray.push(rand);
-//
-//             }
-//             setTimeout(function() {
-//                 $scope.lightGame();
-//             }, 1000);
-//         };
-//
-//         $scope.lightGame = function() {
-//             for (let i = 0; i < patternArray.length; i++) {
-//                 setTimeout(function(i) {
-//                     setTimeout(function() {
-//                         console.log(patternArray[i]);
-//
-//                         $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
-//                     }, 1000);
-//                     $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
-//                     num++;
-//                     slices++;
-//                     console.log('slice o pie', slices);
-//                     console.log('nummmmmmm', num);
-//                     if (num == patternArray.length) {
-//                         setTimeout(function() {
-//                             $scope.startGame();
-//
-//                         }, 1500);
-//                     }
-//                 }, i * 1500, i);
-//             }
-//         };
-//
-//         $scope.startGame = function() {
-//             console.log('in');
-//             centerDisplay.className = 'center-display';
-//             centerDisplay.innerHTML = 'play!';
-//             turnDisplay.appendChild(centerDisplay);
-//         };
-//
-//         $scope.addScore = function(score) {
-//             console.log('scores', score);
-//         };
-//
-//     }]);
-// })(angular);
+(function(ng) {
+  ng.module('Simon').controller('GameController', ['$scope', '$q', function($scope, $q) {
+
+    let patternArray = [];
+    let userArr = [];
+    let num = 0;
+    let points = 0;
+    let score = 0;
+    $scope.status = '';
+    $scope.round = 1;
+    $scope.betweenRounds = false;
+    $scope.lose = 'you lose';
+    $scope.next = 'next';
+
+    $('.slice').on('mousedown mouseup', function() {
+      $(this).toggleClass('select');
+    });
+
+    $(window).on('keydown keyup', function() {
+      if (event.which === 73) {
+        $(`.slice[data-id=1]`).toggleClass('select');
+        $('.audio1').get(0).play();
+      } else if (event.which === 79) {
+        $(`.slice[data-id=2]`).toggleClass('select');
+        $('.audio2').get(0).play();
+      } else if (event.which === 75) {
+        $(`.slice[data-id=3]`).toggleClass('select');
+        $('.audio3').get(0).play();
+      } else if (event.which === 76) {
+        $(`.slice[data-id=4]`).toggleClass('select');
+        $('.audio4').get(0).play();
+
+      }
+    });
+
+    $scope.start = function() {
+      $scope.status = 'ready!';
+      $scope.gamePattern();
+    };
+
+    $scope.gamePattern = function() {
+      while (patternArray.length < 3 + $scope.round) {
+        let rand = Math.floor(Math.random() * (4) + 1);
+        patternArray.push(rand);
+      }
+      console.log(patternArray);
+      setTimeout(function() {
+        $scope.lightGame();
+      }, 1000);
+    };
+
+    $scope.lightGame = function() {
+      for (let i = 0; i < patternArray.length; i++) {
+        setTimeout(function(i) {
+          $(`.audio${patternArray[i]}`).get(0).cloneNode().play();
+          setTimeout(function() {
+            $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
+          }, 1000);
+          $(`.slice[data-id=${patternArray[i]}]`).toggleClass('select');
+          num++;
+          if (num == patternArray.length) {
+            setTimeout(function() {
+              $scope.startGame();
+              if ($scope.round === 1) {
+                $scope.bindEvents();
+              }
+            }, 1500);
+          }
+        }, i * 1500, i);
+      }
+    };
+
+    $scope.startGame = () => {
+      console.log('start game');
+      $scope.$apply(function() {
+        $scope.status = 'go!';
+      });
+    };
+
+    $scope.bindEvents = function() {
+      $('.slice').on('click', function() {
+        console.log($(this).data('id'));
+        let num = $(this).data('id');
+        $(`.audio${num}`).get(0).play();
+        userArr.push($(this).data('id'));
+        $scope.checkPattern();
+      });
+
+      $(window).keydown(function() {
+
+        if (event.which === 73) {
+          // console.log('in');
+          userArr.push(1);
+          $scope.checkPattern();
+        } else if (event.which === 79) {
+          userArr.push(2);
+          $scope.checkPattern();
+        } else if (event.which === 75) {
+          userArr.push(3);
+          $scope.checkPattern();
+        } else if (event.which === 76) {
+          userArr.push(4);
+          $scope.checkPattern();
+        }
+      });
+    };
+
+    $scope.checkPattern = function() {
+      for (var i = 0; i < userArr.length; i++) {
+        if (userArr[i]) {
+          if (userArr[i] != patternArray[i]) {
+            $scope.youLose();
+          } else if (userArr.length === patternArray.length) {
+            $scope.youWin();
+            break;
+          }
+        }
+      }
+    };
+
+    $scope.youLose = function() {
+      $('.audio5').get(0).play();
+
+      $scope.$apply(function() {
+        $scope.betweenRounds = true;
+        $scope.next = 'try again';
+
+      });
+      console.log('you lost');
+    };
+
+    $scope.youWin = function() {
+      $scope.$apply(function() {
+        $scope.round++;
+        $scope.lose = 'nice job!';
+        $scope.betweenRounds = true;
+        $scope.next = 'next';
+      });
+      console.log('you win');
+    };
+
+    $scope.resetRound = function() {
+      $scope.status = '';
+      patternArray = [];
+      userArr = [];
+      $scope.betweenRounds = false;
+      console.log('reset');
+    };
+
+  }]);
+})(angular);

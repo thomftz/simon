@@ -1,12 +1,21 @@
-<!-- <div class="gameshapecontainer" ng-show="signedIn">
+<div class="gameshapecontainer is-flex" ng-show="signedIn">
   <div class="gameshape">
-    <div data-id="0" class="slice topleft" id=""></div>
-    <div data-id="1" class="slice topright" id=""></div>
-    <div data-id="2" class="slice bottomleft" id=""></div>
-    <div data-id="3" class="slice bottomright" id=""></div>
+    <div data-id="1" class="slice topleft" id=""></div>
+    <div data-id="2" class="slice topright" id=""></div>
+    <div data-id="3" class="slice bottomleft" id=""></div>
+    <div data-id="4" class="slice bottomright" id=""></div>
+    <div class="centershape is-flex between" ng-show="betweenRounds">
+      <span class="round">{{lose}}</span>
+      <button class="reset-game" ng-click="resetRound()">{{next}}</button>
+    </div>
+    <div class="centershape is-flex" ng-hide="betweenRounds">
+      <span class="round">round: {{round}}</span>
+      <div class="gameBtn-container is-flex">
 
-    <div class="centershape">
-      <button ng-click="showtimer=true" ng-hide="showtimer" class="start-game">start</button>
+        <button class="start-game" ng-click="start()">start</button>
+        <button class="reset-game" ng-click="resetRound()">reset</button>
+      </div>
+      <span class="round">{{status}}</span>
     </div>
   </div>
-</div> -->
+</div>
