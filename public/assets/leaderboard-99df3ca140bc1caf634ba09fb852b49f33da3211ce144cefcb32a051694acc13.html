@@ -1,0 +1,18 @@
+<table ng-show="signedIn">
+  <tr>
+
+    <th>User</th>
+    <th>Score</th>
+    <th>Rank</th>
+
+  </tr>
+  <tbody ng-controller="LeaderboardController as leadCtrl">
+    <tr class='item-list' ng-repeat="users in users | orderBy: sortType:sortReverse">
+
+      <td>{{users.name}}</td>
+      <td>{{users.score}}</td>
+      <td>{{users.rank}}</td>
+    </tr>
+  </tbody>
+
+</table>
