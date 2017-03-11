@@ -2,6 +2,9 @@
 
   ng.module('Simon').controller('ProfileController', ['$scope', '$q', 'DataService', 'UserService', function($scope, $q, DataService, UserService) {
     $scope.userName = currentUser;
+    $scope.rank = null;
+
+
 
     if (currentUser) {
       $scope.signedIn = true;
@@ -20,6 +23,8 @@
     $scope.patchBioText = function(text) {
       $q.when(DataService.patch(text)).then((response) => {
         $scope.bio = response.data.about;
+        UserService.getArr();
+
       }).catch((error) => {
         console.log(error);
       });
@@ -60,10 +65,14 @@
 
       } else if (obj.score >= 7000 && obj.score < 8000) {
         obj.rank = "Val cheated";
+
+      } else if (obj.score >= 8000) {
+        obj.rank = "Bryce cheated";
       }
       $scope.rank = obj.rank;
       $scope.points = obj.score;
     };
+
 
 
     $q.when(DataService.get("/users.json")).then((response) => {
@@ -79,9 +88,19 @@
           $scope.rankSet(tempObj);
         }
       }
+      UserService.getArr();
     }).catch((error) => {
       console.log(error);
     });
+    $scope.getUser = function() {
+      $scope.user = UserService.getArr();
+    };
+
+
+    $scope.pop = function() {
+      UserService.getArr();
+      return;
+    };
 
   }]);
 })(angular, window.currentUser);

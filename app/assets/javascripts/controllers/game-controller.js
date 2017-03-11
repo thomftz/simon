@@ -122,7 +122,6 @@
       $scope.$apply(function() {
         $scope.betweenRounds = true;
         $scope.next = 'try again';
-
       });
     };
 
@@ -132,7 +131,7 @@
         $scope.lose = 'nice job!';
         $scope.betweenRounds = true;
         $scope.next = 'next';
-        $scope.score += 25;
+        $scope.score += 100;
       });
       let score = $scope.score;
       postScore(score);
@@ -147,7 +146,7 @@
 
     function postScore(points) {
       $q.when(DataService.post(points)).then((response) => {
-        // console.log(response.data);
+        UserService.getArr();
       }).catch((error) => {
         // console.log(error);
       });
