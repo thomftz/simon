@@ -20,6 +20,6 @@ A remake of the classic Simon Says game.
 **for testing:**
 
 # Contributors
-* Carter McGee
+* Carter Magee
 * Katherine Hill
 * Thomas Fitzpatrick
