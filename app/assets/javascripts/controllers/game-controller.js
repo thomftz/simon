@@ -43,7 +43,7 @@
         let rand = Math.floor(Math.random() * (4) + 1);
         patternArray.push(rand);
       }
-      console.log(patternArray);
+      // console.log(patternArray);
       setTimeout(function() {
         $scope.lightGame();
       }, 1000);

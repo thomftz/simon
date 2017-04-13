@@ -29,10 +29,7 @@
           } else if (array[i].score >= 7000 && array[i].score < 8000) {
             usersArr[i].rank = "Val cheated";
 
-          } else if (array[i].score >= 7000) {
-            usersArr[i].rank = "carter status";
-
-          } else if (array[i].score >= 7000 && array[i].score < 8000) {
+          } else if (array[i].score >= 8000) {
             usersArr[i].rank = "Bryce cheated";
           }
         }
@@ -51,7 +48,7 @@
         }
         usersArr = arr;
         rankSet(arr);
-        console.log(usersArr);
+        // console.log(usersArr);
       }).catch((error) => {
         console.log(error);
       });
