@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    
+
     @user_name = {}
 
     @users.each do |u|

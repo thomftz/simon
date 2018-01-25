@@ -14,13 +14,11 @@ gem 'omniauth-google-oauth2'
 gem 'ruby-serializer'
 
 group :production, :staging do
-  gem "rails_12factor"
   gem "rails_stdout_logging"
   gem "rails_serve_static_assets"
 end
 # AWS File uploads
 gem 'aws-sdk'
-gem 'paperclip'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
